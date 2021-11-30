@@ -1,0 +1,310 @@
+[32mINFO    [0m paramiko.transport:transport.py:1819 Connected (version 2.0, client OpenSSH_7.4)
+[32mINFO    [0m paramiko.transport:transport.py:1819 Authentication (password) successful!
+[32mINFO    [0m paramiko.transport:transport.py:1819 Connected (version 2.0, client OpenSSH_7.4)
+[32mINFO    [0m paramiko.transport:transport.py:1819 Authentication (password) successful!
+[32mINFO    [0m root:connect_mysql.py:65 初始数量：554
+[32mINFO    [0m root:handle_black.py:23 runfind
+ args:
+('css', '.r-form-horizontal>div>div>div>div>span>input')
+{}
+
+[32mINFO    [0m root:handle_black.py:23 runsleep
+ args:
+(1,)
+{}
+
+[32mINFO    [0m root:handle_black.py:23 runfind
+ args:
+('id', 'password')
+{}
+
+[32mINFO    [0m root:handle_black.py:23 runsleep
+ args:
+(1,)
+{}
+
+[32mINFO    [0m root:handle_black.py:23 runfind
+ args:
+('css', '.erp-loginbtn_CPzMS>span')
+{}
+
+[32mINFO    [0m root:handle_black.py:23 runsleep
+ args:
+(1,)
+{}
+
+[32mINFO    [0m root:handle_black.py:23 runfind
+ args:
+('css', '#app>section>div>div:nth-child(2)>div>ul>li:nth-child(3)>span>div')
+{}
+
+[32mINFO    [0m root:handle_black.py:23 runsleep
+ args:
+(1,)
+{}
+
+[32mINFO    [0m root:handle_black.py:23 runfind
+ args:
+('css', '#app-wms>section>aside>div>ul>li:nth-child(6)>div>span>span')
+{}
+
+[32mINFO    [0m root:handle_black.py:23 runsleep
+ args:
+(1,)
+{}
+
+[32mINFO    [0m root:handle_black.py:23 runfind
+ args:
+('css', '#app-wms > section > aside > div > ul > li:nth-child(6)>ul>li>a')
+{}
+
+[32mINFO    [0m root:handle_black.py:23 runsleep
+ args:
+(1,)
+{}
+
+[32mINFO    [0m root:handle_black.py:23 runfind
+ args:
+('css', '#props-tags>main>div>div>div>div>div>label:nth-child(2)>span:nth-child(2)')
+{}
+
+[32mINFO    [0m root:handle_black.py:23 runsleep
+ args:
+(1,)
+{}
+
+[32mINFO    [0m root:handle_black.py:23 runfind
+ args:
+('css', '#props-tags>main>div>div>div>div:nth-child(2)>form>div>div>div>div:nth-child(2)>div>span>div>div>div')
+{}
+
+[32mINFO    [0m root:handle_black.py:23 runsleep
+ args:
+(1,)
+{}
+
+[32mINFO    [0m root:handle_black.py:23 runfind
+ args:
+('css', '#props-tags>main>div>div>div>div:nth-child(2)>form>div>div>div>div:nth-child(2)>div>span>div>div>div>div:nth-child(2)>div>input')
+{}
+
+[32mINFO    [0m root:handle_black.py:23 runsleep
+ args:
+(1,)
+{}
+
+[32mINFO    [0m root:handle_black.py:23 runfind
+ args:
+('css', '#props-tags>main>div>div>div>div:nth-child(2)>form>div>div:nth-child(3)>div>div:nth-child(2)>div>span>span>input')
+{}
+
+[32mINFO    [0m root:handle_black.py:23 runsleep
+ args:
+(1,)
+{}
+
+[32mINFO    [0m root:handle_black.py:23 runfind
+ args:
+('css', '#props-tags>main>div>div>div>div:nth-child(2)>form>div>div:nth-child(4)>div>div>div>span>button')
+{}
+
+[32mINFO    [0m root:handle_black.py:23 runsleep
+ args:
+(1,)
+{}
+
+[32mINFO    [0m root:handle_black.py:23 runfind
+ args:
+('css', '#props-tags>main>div>div:nth-child(3)>div>div>div>div>div>div:nth-child(2)>table>tbody>tr:nth-child(1)>td:nth-child(2)>div>div:nth-child(2)>a')
+{}
+
+[32mINFO    [0m root:handle_black.py:23 runsleep
+ args:
+(1,)
+{}
+
+[32mINFO    [0m root:handle_black.py:23 runfind
+ args:
+('css', '#app-wms > div:nth-child(3) > div > div.ant-modal-wrap > div > div.ant-modal-content > div.ant-modal-body > div.top-search-from > form:nth-child(2) > div > div:nth-child(2) > div.ant-row.ant-form-item > div.ant-col.ant-col-19.ant-form-item-control-wrapper > div > span > textarea')
+{}
+
+[32mINFO    [0m root:handle_black.py:23 runsleep
+ args:
+(1,)
+{}
+
+[32mINFO    [0m root:handle_black.py:23 runfind
+ args:
+('css', '#app-wms > div:nth-child(3) > div > div.ant-modal-wrap > div > div.ant-modal-content > div.ant-modal-body > div.table-footer > button.ant-btn.ant-btn-primary')
+{}
+
+[32mINFO    [0m root:handle_black.py:23 runsleep
+ args:
+(1,)
+{}
+
+[32mINFO    [0m root:handle_black.py:23 runfind
+ args:
+('css', '#props-tags>main>div>div>div>div:nth-child(2)>form>div>div>div>div:nth-child(2)>div>span>div>div>div')
+{}
+
+[32mINFO    [0m root:handle_black.py:23 runsleep
+ args:
+(1,)
+{}
+
+[32mINFO    [0m root:handle_black.py:23 runfind
+ args:
+('css', '#props-tags>main>div>div:nth-child(3)>div>div>div>div>div>div:nth-child(2)>table>tbody>tr:nth-child(1)>td:nth-child(2)>div>div:nth-child(2)>a')
+{}
+
+[32mINFO    [0m root:handle_black.py:23 runsleep
+ args:
+(1,)
+{}
+
+[32mINFO    [0m root:handle_black.py:23 runfind
+ args:
+('css', '#app-wms > div:nth-child(3) > div > div.ant-modal-wrap > div > div.ant-modal-content > div.ant-modal-body > div.top-search-from > form:nth-child(2) > div > div:nth-child(2) > div.ant-row.ant-form-item > div.ant-col.ant-col-19.ant-form-item-control-wrapper > div > span > textarea')
+{}
+
+[32mINFO    [0m root:handle_black.py:23 runsleep
+ args:
+(1,)
+{}
+
+[32mINFO    [0m root:handle_black.py:23 runfind
+ args:
+('css', '#app-wms > div:nth-child(3) > div > div.ant-modal-wrap > div > div.ant-modal-content > div.ant-modal-body > div.table-footer > button.ant-btn.ant-btn-primary')
+{}
+
+[32mINFO    [0m root:handle_black.py:23 runsleep
+ args:
+(1,)
+{}
+
+[32mINFO    [0m root:handle_black.py:23 runfind
+ args:
+('css', '#props-tags>main>div>div>div>div:nth-child(2)>form>div>div>div>div:nth-child(2)>div>span>div>div>div')
+{}
+
+[32mINFO    [0m root:handle_black.py:23 runsleep
+ args:
+(1,)
+{}
+
+[32mINFO    [0m root:handle_black.py:23 runfind
+ args:
+('css', '#props-tags>main>div>div:nth-child(3)>div>div>div>div>div>div:nth-child(2)>table>tbody>tr:nth-child(1)>td:nth-child(2)>div>div:nth-child(2)>a')
+{}
+
+[32mINFO    [0m root:handle_black.py:23 runsleep
+ args:
+(1,)
+{}
+
+[32mINFO    [0m root:handle_black.py:23 runfind
+ args:
+('css', '#app-wms > div:nth-child(3) > div > div.ant-modal-wrap > div > div.ant-modal-content > div.ant-modal-body > div.top-search-from > form:nth-child(2) > div > div:nth-child(2) > div.ant-row.ant-form-item > div.ant-col.ant-col-19.ant-form-item-control-wrapper > div > span > textarea')
+{}
+
+[32mINFO    [0m root:handle_black.py:23 runsleep
+ args:
+(1,)
+{}
+
+[32mINFO    [0m root:handle_black.py:23 runfind
+ args:
+('css', '#app-wms > div:nth-child(3) > div > div.ant-modal-wrap > div > div.ant-modal-content > div.ant-modal-body > div.table-footer > button.ant-btn.ant-btn-primary')
+{}
+
+[32mINFO    [0m root:handle_black.py:23 runsleep
+ args:
+(1,)
+{}
+
+[32mINFO    [0m root:handle_black.py:23 runfind
+ args:
+('css', '#props-tags>main>div>div>div>div:nth-child(2)>form>div>div>div>div:nth-child(2)>div>span>div>div>div')
+{}
+
+[32mINFO    [0m root:handle_black.py:23 runsleep
+ args:
+(1,)
+{}
+
+[32mINFO    [0m root:handle_black.py:23 runfind
+ args:
+('css', '#props-tags>main>div>div:nth-child(3)>div>div>div>div>div>div:nth-child(2)>table>tbody>tr:nth-child(1)>td:nth-child(2)>div>div:nth-child(2)>a')
+{}
+
+[32mINFO    [0m root:handle_black.py:23 runsleep
+ args:
+(1,)
+{}
+
+[32mINFO    [0m root:handle_black.py:23 runfind
+ args:
+('css', '#app-wms > div:nth-child(3) > div > div.ant-modal-wrap > div > div.ant-modal-content > div.ant-modal-body > div.top-search-from > form:nth-child(2) > div > div:nth-child(2) > div.ant-row.ant-form-item > div.ant-col.ant-col-19.ant-form-item-control-wrapper > div > span > textarea')
+{}
+
+[32mINFO    [0m root:handle_black.py:23 runsleep
+ args:
+(1,)
+{}
+
+[32mINFO    [0m root:handle_black.py:23 runfind
+ args:
+('css', '#app-wms > div:nth-child(3) > div > div.ant-modal-wrap > div > div.ant-modal-content > div.ant-modal-body > div.table-footer > button.ant-btn.ant-btn-primary')
+{}
+
+[32mINFO    [0m root:handle_black.py:23 runsleep
+ args:
+(1,)
+{}
+
+[32mINFO    [0m root:handle_black.py:23 runfind
+ args:
+('css', '#props-tags>main>div>div>div>div:nth-child(2)>form>div>div>div>div:nth-child(2)>div>span>div>div>div')
+{}
+
+[32mINFO    [0m root:handle_black.py:23 runsleep
+ args:
+(1,)
+{}
+
+[32mINFO    [0m root:handle_black.py:23 runfind
+ args:
+('css', '#props-tags>main>div>div:nth-child(3)>div>div>div>div>div>div:nth-child(2)>table>tbody>tr:nth-child(1)>td:nth-child(2)>div>div:nth-child(2)>a')
+{}
+
+[32mINFO    [0m root:handle_black.py:23 runsleep
+ args:
+(1,)
+{}
+
+[32mINFO    [0m root:handle_black.py:23 runfind
+ args:
+('css', '#app-wms > div:nth-child(3) > div > div.ant-modal-wrap > div > div.ant-modal-content > div.ant-modal-body > div.top-search-from > form:nth-child(2) > div > div:nth-child(2) > div.ant-row.ant-form-item > div.ant-col.ant-col-19.ant-form-item-control-wrapper > div > span > textarea')
+{}
+
+[32mINFO    [0m root:handle_black.py:23 runsleep
+ args:
+(1,)
+{}
+
+[32mINFO    [0m root:handle_black.py:23 runfind
+ args:
+('css', '#app-wms > div:nth-child(3) > div > div.ant-modal-wrap > div > div.ant-modal-content > div.ant-modal-body > div.table-footer > button.ant-btn.ant-btn-primary')
+{}
+
+[32mINFO    [0m root:handle_black.py:23 runsleep
+ args:
+(1,)
+{}
+
+[32mINFO    [0m paramiko.transport:transport.py:1819 Connected (version 2.0, client OpenSSH_7.4)
+[32mINFO    [0m paramiko.transport:transport.py:1819 Authentication (password) successful!
+[32mINFO    [0m paramiko.transport:transport.py:1819 Connected (version 2.0, client OpenSSH_7.4)
+[32mINFO    [0m paramiko.transport:transport.py:1819 Authentication (password) successful!
+[32mINFO    [0m root:connect_mysql.py:68 报损后的数量：544

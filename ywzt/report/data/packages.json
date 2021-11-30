@@ -1,0 +1,43 @@
+{
+  "uid" : "83edc06c07f9ae9e47eb6dd1b683e4e2",
+  "name" : "packages",
+  "children" : [ {
+    "name" : "ywzt.test_run",
+    "children" : [ {
+      "name" : "test_baoshun",
+      "uid" : "bad04a01d9fa4d6d",
+      "parentUid" : "ac9809677e54b5ac1f14a6479b9721c5",
+      "status" : "passed",
+      "time" : {
+        "start" : 1637930003345,
+        "stop" : 1637930031072,
+        "duration" : 27727
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "test_shenhe_pass",
+      "uid" : "362e2e93c743fe71",
+      "parentUid" : "ac9809677e54b5ac1f14a6479b9721c5",
+      "status" : "passed",
+      "time" : {
+        "start" : 1637930032627,
+        "stop" : 1637930076160,
+        "duration" : 43533
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "ywzt.test_run"
+  } ]
+}

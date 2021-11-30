@@ -1,0 +1,82 @@
+{
+  "uid" : "362e2e93c743fe71",
+  "name" : "test_shenhe_pass",
+  "fullName" : "ywzt.test_run.Testrun#test_shenhe_pass",
+  "historyId" : "4b44d2f3fb57c7901cf7455daba8d19b",
+  "time" : {
+    "start" : 1637930032627,
+    "stop" : 1637930076160,
+    "duration" : 43533
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "f86b46a6cdb94186",
+      "name" : "log",
+      "source" : "f86b46a6cdb94186.txt",
+      "type" : "text/plain",
+      "size" : 9152
+    }, {
+      "uid" : "a5d5eafd75358732",
+      "name" : "stdout",
+      "source" : "a5d5eafd75358732.txt",
+      "type" : "text/plain",
+      "size" : 32
+    } ],
+    "parameters" : [ ],
+    "attachmentsCount" : 2,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "ywzt"
+  }, {
+    "name" : "suite",
+    "value" : "test_run"
+  }, {
+    "name" : "subSuite",
+    "value" : "Testrun"
+  }, {
+    "name" : "host",
+    "value" : "DESKTOP-THA8Q4J"
+  }, {
+    "name" : "thread",
+    "value" : "28684-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "ywzt.test_run"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "362e2e93c743fe71.json",
+  "parameterValues" : [ ]
+}

@@ -1,0 +1,51 @@
+{
+  "uid" : "98d3104e051c652961429bf95fa0b5d6",
+  "name" : "suites",
+  "children" : [ {
+    "name" : "ywzt",
+    "children" : [ {
+      "name" : "test_run",
+      "children" : [ {
+        "name" : "Testrun",
+        "children" : [ {
+          "name" : "test_baoshun",
+          "uid" : "bad04a01d9fa4d6d",
+          "parentUid" : "f139ca197245440e9b86562580366e19",
+          "status" : "passed",
+          "time" : {
+            "start" : 1637930003345,
+            "stop" : 1637930031072,
+            "duration" : 27727
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "newPassed" : false,
+          "newBroken" : false,
+          "retriesCount" : 0,
+          "retriesStatusChange" : false,
+          "parameters" : [ ]
+        }, {
+          "name" : "test_shenhe_pass",
+          "uid" : "362e2e93c743fe71",
+          "parentUid" : "f139ca197245440e9b86562580366e19",
+          "status" : "passed",
+          "time" : {
+            "start" : 1637930032627,
+            "stop" : 1637930076160,
+            "duration" : 43533
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "newPassed" : false,
+          "newBroken" : false,
+          "retriesCount" : 0,
+          "retriesStatusChange" : false,
+          "parameters" : [ ]
+        } ],
+        "uid" : "f139ca197245440e9b86562580366e19"
+      } ],
+      "uid" : "c98c19c68541559cdf41d41ab81a4e90"
+    } ],
+    "uid" : "65c6c66423a180aa62c7e8d93a50531e"
+  } ]
+}

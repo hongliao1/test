@@ -1,0 +1,85 @@
+{
+  "uid" : "bad04a01d9fa4d6d",
+  "name" : "test_baoshun",
+  "fullName" : "ywzt.test_run.Testrun#test_baoshun",
+  "historyId" : "8164cbf839b63f19f4ed3250efbdc030",
+  "time" : {
+    "start" : 1637930003345,
+    "stop" : 1637930031072,
+    "duration" : 27727
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "7978405e8f6db42a",
+      "name" : "log",
+      "source" : "7978405e8f6db42a.txt",
+      "type" : "text/plain",
+      "size" : 3641
+    }, {
+      "uid" : "90ada3e844d68d16",
+      "name" : "stdout",
+      "source" : "90ada3e844d68d16.txt",
+      "type" : "text/plain",
+      "size" : 32
+    } ],
+    "parameters" : [ ],
+    "attachmentsCount" : 2,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "run(order=2)"
+  }, {
+    "name" : "parentSuite",
+    "value" : "ywzt"
+  }, {
+    "name" : "suite",
+    "value" : "test_run"
+  }, {
+    "name" : "subSuite",
+    "value" : "Testrun"
+  }, {
+    "name" : "host",
+    "value" : "DESKTOP-THA8Q4J"
+  }, {
+    "name" : "thread",
+    "value" : "28684-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "ywzt.test_run"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ "run(order=2)" ]
+  },
+  "source" : "bad04a01d9fa4d6d.json",
+  "parameterValues" : [ ]
+}

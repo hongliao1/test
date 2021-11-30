@@ -1,0 +1,149 @@
+[32mINFO    [0m root:handle_black.py:23 runfind
+ args:
+('css', '.r-form-horizontal>div>div>div>div>span>input')
+{}
+
+[32mINFO    [0m root:handle_black.py:23 runsleep
+ args:
+(1,)
+{}
+
+[32mINFO    [0m root:handle_black.py:23 runfind
+ args:
+('id', 'password')
+{}
+
+[32mINFO    [0m root:handle_black.py:23 runsleep
+ args:
+(1,)
+{}
+
+[32mINFO    [0m root:handle_black.py:23 runfind
+ args:
+('css', '.erp-loginbtn_CPzMS>span')
+{}
+
+[32mINFO    [0m root:handle_black.py:23 runsleep
+ args:
+(1,)
+{}
+
+[32mINFO    [0m root:handle_black.py:23 runfind
+ args:
+('css', '#app>section>div>div:nth-child(2)>div>ul>li:nth-child(3)>span>div')
+{}
+
+[32mINFO    [0m root:handle_black.py:23 runsleep
+ args:
+(1,)
+{}
+
+[32mINFO    [0m root:handle_black.py:23 runfind
+ args:
+('css', '#app-wms>section>aside>div>ul>li:nth-child(7)>div>span>span')
+{}
+
+[32mINFO    [0m root:handle_black.py:23 runsleep
+ args:
+(1,)
+{}
+
+[32mINFO    [0m root:handle_black.py:23 runfind
+ args:
+('css', '#app-wms > section > aside > div > ul > li:nth-child(7) > ul > li:nth-child(2)>a')
+{}
+
+[32mINFO    [0m root:handle_black.py:23 runsleep
+ args:
+(1,)
+{}
+
+[32mINFO    [0m root:handle_black.py:23 runfind
+ args:
+('xpath', '//*[@id="props-tags"]//form/div/div[1]/div/div[2]/div/span/div/div/div')
+{}
+
+[32mINFO    [0m root:handle_black.py:23 runsleep
+ args:
+(1,)
+{}
+
+[32mINFO    [0m root:handle_black.py:23 runfind
+ args:
+('css', '#props-tags > main > div > div:nth-child(1) > div.top-search-from > div > form > div > div:nth-child(1) > div > div.ant-col.ant-col-16.ant-form-item-control-wrapper > div > span > div > div > div > div.ant-select-search.ant-select-search--inline > div > input')
+{}
+
+[32mINFO    [0m root:handle_black.py:23 runsleep
+ args:
+(1,)
+{}
+
+[32mINFO    [0m root:handle_black.py:23 runfind
+ args:
+('css', '#props-tags > main > div > div:nth-child(1) > div.top-search-from > div > form > div > div:nth-child(3) > div > div.ant-col.ant-col-16.ant-form-item-control-wrapper > div > span > span > input')
+{}
+
+[32mINFO    [0m root:handle_black.py:23 runsleep
+ args:
+(1,)
+{}
+
+[32mINFO    [0m root:handle_black.py:23 runfind
+ args:
+('xpath', '//*[@id="props-tags"]/main/div/div[1]/div[1]/div/form/div/div[ 4]/div/div/div/span/button[1]')
+{}
+
+[32mINFO    [0m root:handle_black.py:23 runsleep
+ args:
+(1,)
+{}
+
+[32mINFO    [0m root:handle_black.py:23 runfind
+ args:
+('css', '#props-tags > main > div > div> div > div > div > div > div > div > div > div > div> table > tbody > tr:nth-child(1) > td:nth-child(13) > button')
+{}
+
+[32mINFO    [0m root:handle_black.py:23 runsleep
+ args:
+(1,)
+{}
+
+[32mINFO    [0m root:handle_black.py:23 runfind
+ args:
+('css', '.ant-modal-content>div:nth-child(3)>form>div:nth-child(5)>div:nth-child(2)>div>span>textarea')
+{}
+
+[32mINFO    [0m root:handle_black.py:23 runsleep
+ args:
+(1,)
+{}
+
+[32mINFO    [0m root:handle_black.py:23 runfind
+ args:
+('css', '.ant-modal-content>div:nth-child(3)>form>div:nth-child(4)>div:nth-child( 2)>div>span>div>div>div>div>div>div>table>tbody:nth-child(3)>tr>td>span>label>span>input')
+{}
+
+[32mINFO    [0m root:handle_black.py:23 runsleep
+ args:
+(1,)
+{}
+
+[32mINFO    [0m root:handle_black.py:23 runfind
+ args:
+('css', '.ant-modal-content>div:nth-child(3)>form>div:nth-child(4)>div:nth-child( 2)>div>span>div>div>div>div>div>div>table>tbody:nth-child(3)>tr>td:nth-last-child( 1)>span>div>div:nth-child(2)>input')
+{}
+
+[32mINFO    [0m root:handle_black.py:23 runsleep
+ args:
+(1,)
+{}
+
+[32mINFO    [0m root:handle_black.py:23 runfind
+ args:
+('css', '.ant-modal-content>div:nth-child(3)>div>button:nth-child(2)')
+{}
+
+[32mINFO    [0m root:handle_black.py:23 runsleep
+ args:
+(1,)
+{}

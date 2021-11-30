@@ -1,0 +1,6 @@
+baosun:
+  -
+    #点击报损结果审核
+    operation: click
+    by: css
+    location: '#app-wms > section > aside > div > ul > li:nth-child(6)>ul>li>a'

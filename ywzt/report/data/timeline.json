@@ -1,0 +1,47 @@
+{
+  "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+  "name" : "timeline",
+  "children" : [ {
+    "name" : "DESKTOP-THA8Q4J",
+    "children" : [ {
+      "name" : "28684-MainThread",
+      "children" : [ {
+        "name" : "test_baoshun",
+        "uid" : "bad04a01d9fa4d6d",
+        "parentUid" : "4badc1a5452d906025c0663f0c04acf3",
+        "status" : "passed",
+        "time" : {
+          "start" : 1637930003345,
+          "stop" : 1637930031072,
+          "duration" : 27727
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_shenhe_pass",
+        "uid" : "362e2e93c743fe71",
+        "parentUid" : "4badc1a5452d906025c0663f0c04acf3",
+        "status" : "passed",
+        "time" : {
+          "start" : 1637930032627,
+          "stop" : 1637930076160,
+          "duration" : 43533
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "4badc1a5452d906025c0663f0c04acf3"
+    } ],
+    "uid" : "d3effeb3e75f9f02882d195598f21d41"
+  } ]
+}

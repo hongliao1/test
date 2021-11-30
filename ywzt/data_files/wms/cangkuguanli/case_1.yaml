@@ -1,0 +1,92 @@
+# 正向用例
+- name: '测试22'   #仓库名
+  num: '测试22'    #仓库编号
+  type: '5'     #  1:自营调拨、2:FBA调拨、3:三方调拨、4:工厂调拨、5:wfs调拨
+  type_1: '1'   #  状态：0:禁用、1:启用
+  action: '中国'    #  国家
+  sheng: '北京市'    #  省
+  city: '北京'    #  城市
+  fuzeren: '廖宏'   #  负责人
+  lianxiren: '廖宏'   #  联系人
+  phone: '123456'  # 电话
+  phone_1: '1234'   #座机
+  email: '123@qq.com'   #邮箱
+  address: '1'    #地址
+  body: '广州蓝图创拓进出口贸易有限公司'   #主体
+  assert: '添加成功'    #断言
+  explain: '正向用例'
+
+# 仓库名重复
+- name: '测试13'   #仓库名
+  num: '测试14'    #仓库编号
+  type: '5'     #  1:自营调拨、2:FBA调拨、3:三方调拨、4:工厂调拨、5:wfs调拨
+  type_1: '1'   #  状态：0:禁用、1:启用
+  action: '中国'    #  国家
+  sheng: '北京市'    #  省
+  city: '北京'    #  城市
+  fuzeren: '廖宏'   #  负责人
+  lianxiren: '廖宏'   #  联系人
+  phone: '123456'  # 电话
+  phone_1: '1234'   #座机
+  email: '123@qq.com'   #邮箱
+  address: '1'    #地址
+  body: '广州蓝图创拓进出口贸易有限公司'   #主体
+  assert: '创建失败'    #断言
+  explain: '仓库名重复'
+
+# 仓库编号重复
+- name: '测试14'   #仓库名
+  num: '测试13'    #仓库编号
+  type: '5'     #  1:自营调拨、2:FBA调拨、3:三方调拨、4:工厂调拨、5:wfs调拨
+  type_1: '1'   #  状态：0:禁用、1:启用
+  action: '中国'    #  国家
+  sheng: '北京市'    #  省
+  city: '北京'    #  城市
+  fuzeren: '廖宏'   #  负责人
+  lianxiren: '廖宏'   #  联系人
+  phone: '123456'  # 电话
+  phone_1: '1234'   #座机
+  email: '123@qq.com'   #邮箱
+  address: '1'    #地址
+  body: '广州蓝图创拓进出口贸易有限公司'   #主体
+  assert: '创建失败'    #断言
+  explain: '仓库编号重复'
+
+# 输入不存在的城市
+- name: ''
+  num: '测试8'
+  type: '5'
+  type_1: '1'
+  action: '中国'
+  sheng: '北京市'
+  city: '巴黎'
+  fuzeren: '廖宏'
+  lianxiren: '廖宏'
+  phone: '123456'
+  phone_1: '1234'
+  email: '123@qq.com'
+  address: '1'
+  body: '广州蓝图创拓进出口贸易有限公司'
+  assert: '不能为空'    #断言
+  explain: '不存在的城市'
+
+# 姓名为空
+- name: ''
+  num: '测试8'
+  type: '5'
+  type_1: '1'
+  action: '中国'
+  sheng: '北京市'
+  city: '北京市'
+  fuzeren: '廖宏'
+  lianxiren: '廖宏'
+  phone: '123456'
+  phone_1: '1234'
+  email: '123@qq.com'
+  address: '1'
+  body: '广州蓝图创拓进出口贸易有限公司'
+  assert: '不能为空'    #断言
+  explain: '姓名为空'
+
+
+

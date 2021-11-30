@@ -1,0 +1,21 @@
+[ {
+  "uid" : "362e2e93c743fe71",
+  "name" : "test_shenhe_pass",
+  "time" : {
+    "start" : 1637930032627,
+    "stop" : 1637930076160,
+    "duration" : 43533
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "bad04a01d9fa4d6d",
+  "name" : "test_baoshun",
+  "time" : {
+    "start" : 1637930003345,
+    "stop" : 1637930031072,
+    "duration" : 27727
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]

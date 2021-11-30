@@ -1,0 +1,24 @@
+kucu:
+  - operation: click
+    by: css
+    location: '#app-wms > section > aside > div > ul > li:nth-child(7) > ul > li:nth-child(1)>a'
+
+kuweikucun:
+  - operation: click
+    by: css
+    location: '#app-wms > section > aside > div > ul > li:nth-child(7) > ul > li:nth-child(2)>a'
+
+kucubiandong:
+  - operation: click
+    by: css
+    location: '#app-wms > section > aside > div > ul > li:nth-child(7) > ul > li:nth-child(3)>a'
+
+danjucaozuo:
+  - operation: click
+    by: css
+    location: '#app-wms > section > aside > div > ul > li:nth-child(7) > ul > li:nth-child(4)>a'
+
+kucujiefeng:
+  - operation: click
+    by: css
+    location: '#app-wms > section > aside > div > ul > li:nth-child(7) > ul > li:nth-child(5)>a'

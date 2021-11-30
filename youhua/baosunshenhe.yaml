@@ -1,0 +1,161 @@
+
+-
+  #点击待审核
+  operation: click
+  by: css
+  location: '#props-tags>main>div>div>div>div>div>label:nth-child(2)>span:nth-child(2)'
+#  input:
+-
+  #点击仓库筛选框
+  operation: click
+  by: css
+  location: "#props-tags>main>div>div>div>div:nth-child(2)>form>div>div>div>div:nth-child(2)>div>span>div>div>div"
+-
+  #输入仓库
+  operation: input
+  by: css
+  location: '#props-tags>main>div>div>div>div:nth-child(2)>form>div>div>div>div:nth-child(2)>div>span>div>div>div>div:nth-child(2)>div>input'
+  input: 美西仓
+
+-
+  #输入创建人
+  operation: input
+  by: css
+  location: '#props-tags>main>div>div>div>div:nth-child(2)>form>div>div:nth-child(3)>div>div:nth-child(2)>div>span>span>input'
+  input: 廖宏
+-
+  #点击查询
+  operation: click
+  by: css
+  location: '#props-tags>main>div>div>div>div:nth-child(2)>form>div>div:nth-child(4)>div>div>div>span>button'
+-
+  operation: sleep
+  time: 1
+#  -
+#    #等待勾选框元素出现
+#    operation: wait
+#    by: css
+#    location: '#props-tags>main>div>div:nth-child(3)>div>div>div>div>div>div:nth-child(2)>table>tbody>tr>td input'
+-
+  #点击审批
+  operation: click
+  by: css
+  location: '#props-tags>main>div>div:nth-child(3)>div>div>div>div>div>div:nth-child(2)>table>tbody>tr:nth-child(1)>td:nth-child(2)>div>div:nth-child(2)>a'
+-
+  operation: sleep
+  time: 1
+-
+  # 输入处理意见
+  operation: input
+  by: css
+  location: '#app-wms>div:nth-child(5)>div>div:nth-child(2)>div>div:nth-child(2)>div:nth-child(3)>div:nth-child(2)>form:nth-child(2)>div>div:nth-child(2)>div:nth-child(2)>div:nth-child(2)>div>span>textarea'
+  input: '自动化测试'
+-
+  #点击审批通过
+  operation: click
+  by: css
+  location: '#app-wms>div:nth-child(5)>div>div:nth-child(2)>div>div:nth-child(2)>div:nth-child(3)>div:nth-child(3)>button'
+-
+  #等一秒
+  operation: sleep
+  time: 1
+-
+  #滑动到元素可见
+  operation: sliding
+  by: css
+  location: "#props-tags>main>div>div>div>div:nth-child(2)>form>div>div>div>div:nth-child(2)>div>span>div>div>div"
+
+-
+  #点击审批
+  operation: click
+  by: css
+  location: '#props-tags>main>div>div:nth-child(3)>div>div>div>div>div>div:nth-child(2)>table>tbody>tr:nth-child(1)>td:nth-child(2)>div>div:nth-child(2)>a'
+-
+  # 输入处理意见
+  operation: input
+  by: css
+  location: '#app-wms>div:nth-child(5)>div>div:nth-child(2)>div>div:nth-child(2)>div:nth-child(3)>div:nth-child(2)>form:nth-child(2)>div>div:nth-child(2)>div:nth-child(2)>div:nth-child(2)>div>span>textarea'
+  input: '自动化测试'
+-
+  #点击审批通过
+  operation: click
+  by: css
+  location: '#app-wms>div:nth-child(5)>div>div:nth-child(2)>div>div:nth-child(2)>div:nth-child(3)>div:nth-child(3)>button'
+-
+  #等一秒
+  operation: sleep
+  time: 1
+-
+  #滑动到元素可见
+  operation: sliding
+  by: css
+  location: "#props-tags>main>div>div>div>div:nth-child(2)>form>div>div>div>div:nth-child(2)>div>span>div>div>div"
+
+-
+  #点击审批
+  operation: click
+  by: css
+  location: '#props-tags>main>div>div:nth-child(3)>div>div>div>div>div>div:nth-child(2)>table>tbody>tr:nth-child(1)>td:nth-child(2)>div>div:nth-child(2)>a'
+-
+  # 输入处理意见
+  operation: input
+  by: css
+  location: '#app-wms>div:nth-child(5)>div>div:nth-child(2)>div>div:nth-child(2)>div:nth-child(3)>div:nth-child(2)>form:nth-child(2)>div>div:nth-child(2)>div:nth-child(2)>div:nth-child(2)>div>span>textarea'
+  input: '自动化测试'
+-
+  #点击审批通过
+  operation: click
+  by: css
+  location: '#app-wms>div:nth-child(5)>div>div:nth-child(2)>div>div:nth-child(2)>div:nth-child(3)>div:nth-child(3)>button'
+-
+  #等一秒
+  operation: sleep
+  time: 1
+-
+  #滑动到元素可见
+  operation: sliding
+  by: css
+  location: "#props-tags>main>div>div>div>div:nth-child(2)>form>div>div>div>div:nth-child(2)>div>span>div>div>div"
+
+-
+  #点击审批
+  operation: click
+  by: css
+  location: '#props-tags>main>div>div:nth-child(3)>div>div>div>div>div>div:nth-child(2)>table>tbody>tr:nth-child(1)>td:nth-child(2)>div>div:nth-child(2)>a'
+-
+  # 输入处理意见
+  operation: input
+  by: css
+  location: '#app-wms>div:nth-child(5)>div>div:nth-child(2)>div>div:nth-child(2)>div:nth-child(3)>div:nth-child(2)>form:nth-child(2)>div>div:nth-child(2)>div:nth-child(2)>div:nth-child(2)>div>span>textarea'
+  input: '自动化测试'
+-
+  #点击审批通过
+  operation: click
+  by: css
+  location: '#app-wms>div:nth-child(5)>div>div:nth-child(2)>div>div:nth-child(2)>div:nth-child(3)>div:nth-child(3)>button'
+-
+  #等一秒
+  operation: sleep
+  time: 1
+-
+  #滑动到元素可见
+  operation: sliding
+  by: css
+  location: "#props-tags>main>div>div>div>div:nth-child(2)>form>div>div>div>div:nth-child(2)>div>span>div>div>div"
+
+-
+  #点击审批
+  operation: click
+  by: css
+  location: '#props-tags>main>div>div:nth-child(3)>div>div>div>div>div>div:nth-child(2)>table>tbody>tr:nth-child(1)>td:nth-child(2)>div>div:nth-child(2)>a'
+-
+  # 输入处理意见
+  operation: input
+  by: css
+  location: '#app-wms>div:nth-child(5)>div>div:nth-child(2)>div>div:nth-child(2)>div:nth-child(3)>div:nth-child(2)>form:nth-child(2)>div>div:nth-child(2)>div:nth-child(2)>div:nth-child(2)>div>span>textarea'
+  input: '自动化测试'
+-
+  #点击审批通过
+  operation: click
+  by: css
+  location: '#app-wms>div:nth-child(5)>div>div:nth-child(2)>div>div:nth-child(2)>div:nth-child(3)>div:nth-child(3)>button'

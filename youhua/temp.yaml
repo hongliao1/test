@@ -1,0 +1,5 @@
+applications:
+  - name:
+    memory: 2048m
+    instances: 1
+    disk_quota: 2048m

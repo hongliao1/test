@@ -1,45 +1,29 @@
-"""
-    打开浏览器。关键字驱动封装了定位，等待、退出等多种方法
-"""
 import inspect
 import json
 import logging
 from time import sleep
 
 import yaml
-from selenium import webdriver
-from selenium.webdriver import ActionChains
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.common.by import By
-from selenium.webdriver.remote.webdriver import WebDriver
+from appium import webdriver
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 
 from ywzt.base.read_yaml import ReadYaml
-from ywzt.handle_black import handle_black
-from ywzt.config.config import driver_type
 
 
-def browser(value):
-    try:
-        return getattr(webdriver, value)()
-    except Exception as i:
-        print(i)
-        return webdriver.Chrome()
+class AppBace(object):
+    def __init__(self):
+        desired_caps = {'platformName': 'Android',
+                        'platformVersion': '7.1.2',
+                        'deviceName': '127.0.0.1-11509',
+                        'appPackage': 'com.rantion.ns.pda',
+                        'appActivity': 'com.rantion.ns_pda.ui.main.activity.WelcomActivity',
+                        'automationName': 'uiautomator2'}
+        self.driver = webdriver.Remote('http://127.0.0.1:4723/wd/hub', desired_caps)
+        self.driver.implicitly_wait(5)
 
-
-class PageBase(object):
-    url = ''
-    # case_patn =''
-    data_path = ''
-
-    def __init__(self, driver: WebDriver = None):
-        if driver is None:
-            self.driver = browser(driver_type)
-        else:
-            self.driver = driver
-        self.max_window()
-        self.driver.implicitly_wait(20)
+    def quit(self):
+        self.driver.quit()
 
     def max_window(self):
         self.driver.maximize_window()
@@ -47,15 +31,15 @@ class PageBase(object):
     def min_window(self):
         self.driver.minimize_window()
 
-    def open(self):
-        self.driver.get(self.url)
+    # def open(self):
+    #     self.driver.get(self.url)
 
-    @handle_black
+    # @handle_black
     def find(self, key, value: str = None):
         if isinstance(key, tuple):
             return self.driver.find_element(*key)
         else:
-            self.sleep(0.3)
+            self.sleep(1)
             if key == "css":
                 return self.driver.find_element(By.CSS_SELECTOR, value)
             elif key == "xpath":
@@ -69,7 +53,7 @@ class PageBase(object):
             else:
                 return self.driver.find_element(key, value)
 
-    @handle_black
+    # @handle_black
     def finds(self, key, value):
         try:
             WebDriverWait(self.driver, 15).until(expected_conditions.visibility_of_element_located((key, value)))
@@ -94,7 +78,7 @@ class PageBase(object):
     def click(self, key, value):
         self.find(key, value).click()
 
-    @handle_black
+    # @handle_black
     def sleep(self, txt):
         sleep(txt)
 

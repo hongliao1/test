@@ -12,13 +12,13 @@ login:
     #点击登录
   - operation: click
     by: css
-    location: '.erp-loginbtn_CPzMS>span'
+    location: '.erp-loginbtn_F2gx_>span'
 
 pms_click:
 #  等待元素出现
   - operation: wait
     by: css
-    location: '#rantion-product>section>aside>div>ul>li:nth-child(5)>div>span'
+    location: '.erp-flex_OMnLA>div>div:nth-child(7)>div>button>span'
 
   - operation: click
     by: css
@@ -28,7 +28,7 @@ wms_click:
 #  等待元素出现
   - operation: wait
     by: css
-    location: '#rantion-product>section>aside>div>ul>li:nth-child(5)>div>span'
+    location: '.erp-flex_OMnLA>div>div:nth-child(7)>div>button>span'
 
   - operation: click
     by: css
@@ -38,7 +38,7 @@ oms_click:
 #  等待元素出现
   - operation: wait
     by: css
-    location: '#rantion-product>section>aside>div>ul>li:nth-child(5)>div>span'
+    location: '.erp-flex_OMnLA>div>div:nth-child(7)>div>button>span'
 
   - operation: click
     by: css
@@ -48,7 +48,7 @@ tms_click:
 #  等待元素出现
   - operation: wait
     by: css
-    location: '#rantion-product>section>aside>div>ul>li:nth-child(5)>div>span'
+    location: '.erp-flex_OMnLA>div>div:nth-child(7)>div>button>span'
 
   - operation: click
     by: css

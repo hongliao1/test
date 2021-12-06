@@ -50,24 +50,44 @@ class PageBase(object):
     def open(self):
         self.driver.get(self.url)
 
+    def one_1(self, key):
+        if key == "css":
+            return By.CSS_SELECTOR
+        elif key == "xpath":
+            return By.XPATH
+        elif key == "id":
+            return By.ID
+        elif key == "class":
+            return By.CLASS_NAME
+        elif key == 'some_text':
+            return By.PARTIAL_LINK_TEXT
+        # elif key == "wait":
+        #     pass
+        else:
+            return '定位方法错误'
+
     @handle_black
     def find(self, key, value: str = None):
         if isinstance(key, tuple):
             return self.driver.find_element(*key)
         else:
             self.sleep(0.3)
-            if key == "css":
-                return self.driver.find_element(By.CSS_SELECTOR, value)
-            elif key == "xpath":
-                return self.driver.find_element(By.XPATH, value)
-            elif key == "id":
-                return self.driver.find_element(By.ID, value)
-            elif key == "class":
-                return self.driver.find_element(By.CLASS_NAME, value)
-            elif key == 'some_text':
-                return self.driver.find_element(By.PARTIAL_LINK_TEXT, value)
-            else:
-                return self.driver.find_element(key, value)
+            self.wait_for_click((self.one_1(key), value))
+            return self.driver.find_element(self.one_1(key), value)
+
+            # if key == "css":
+            # WebDriverWait(self.driver, 10).until(expected_conditions.visibility_of_element_located((key, value)))
+            #     return self.driver.find_element(By.CSS_SELECTOR, value)
+            # elif key == "xpath":
+            #     return self.driver.find_element(By.XPATH, value)
+            # elif key == "id":
+            #     return self.driver.find_element(By.ID, value)
+            # elif key == "class":
+            #     return self.driver.find_element(By.CLASS_NAME, value)
+            # elif key == 'some_text':
+            #     return self.driver.find_element(By.PARTIAL_LINK_TEXT, value)
+            # else:
+            #     return self.driver.find_element(key, value)
 
     @handle_black
     def finds(self, key, value):
@@ -138,6 +158,11 @@ class PageBase(object):
             #     self.action().send_keys(Keys.F5)
             if 'sliding' == data['operation']:
                 self.sliding(data['by'], data['location'])
+
+            # if data['txt']:
+            #     print('当前执行：%s' % data['txt'])
+            # else:
+            #     pass
 
     # 模拟键盘操作
     # def action(self):

@@ -80,16 +80,16 @@ def num():
 
 
 # 不可用于pytest，因为pytest不能存在__init__
-class ConectMySQL_1:
-    def __init__(self, func):
-        self.func = func
-
-    def __call__(self, *args, **kwargs):
-        self.num_start = ConnectMySQL().__str__()
-        logging.basicConfig(level=logging.INFO)
-        logging.info('初始数量：' + self.num_start)
-        self.func(self, *args, **kwargs)
-        num_end = ConnectMySQL().__str__()
-        logging.info('报损后的数量：' + num_end)
-        # num = int(self.num_start) - int(num_end)
-        print('初始数量：' + self.num_start)
+# class ConectMySQL_1:
+#     def __init__(self, func):
+#         self.func = func
+#
+#     def __call__(self, *args, **kwargs):
+#         self.num_start = ConnectMySQL().__str__()
+#         logging.basicConfig(level=logging.INFO)
+#         logging.info('初始数量：' + self.num_start)
+#         self.func(self, *args, **kwargs)
+#         num_end = ConnectMySQL().__str__()
+#         logging.info('报损后的数量：' + num_end)
+#         # num = int(self.num_start) - int(num_end)
+#         print('初始数量：' + self.num_start)

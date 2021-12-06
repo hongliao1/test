@@ -10,7 +10,7 @@ from ywzt.pages.login import LoginPage
 class Testrun:
     def setup(self):
         self.login = LoginPage()
-
+    
     # @connect_mysql
     # @pytest.mark.run(order=1)
     # def test_baoshun(self):

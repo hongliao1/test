@@ -4,15 +4,18 @@ login:
     by: css
     location: '.r-form-horizontal>div>div>div>div>span>input'
     input: ${username}
+    txt: '输入账号'
     #输入密码
   - operation: input
     by: id
     location: "password"
     input: ${password}
+    txt: '输入密码'
     #点击登录
   - operation: click
     by: css
     location: '.erp-loginbtn_F2gx_>span'
+    txt: '点击登录'
 
 pms_click:
 #  等待元素出现
@@ -23,6 +26,7 @@ pms_click:
   - operation: click
     by: css
     location: '#app>section>div>div:nth-child(2)>div>ul>li:nth-child(2)>span>div'
+    txt: '点击采购管理'
 
 wms_click:
 #  等待元素出现

@@ -44,7 +44,7 @@ kuwei_baosun:
   - operation: click
     by: css
     location: '.ant-modal-content>div:nth-child(3)>form>div:nth-child(4)>div:nth-child(
-                2)>div>span>div>div>div>div>div>div>table>tbody:nth-child(3)>tr>td>span>label>span>input'
+                2)>div>span>div>div>div>div>div>div>table>tbody:nth-child(3)>tr>td>span>label>span'
 
   - operation: input
     by: css

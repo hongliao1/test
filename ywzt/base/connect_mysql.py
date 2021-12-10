@@ -36,7 +36,7 @@ def connect_uat_mysql():
     # 执行sql语句
     cursor.execute(config.sql)  # 获取数据
     data = cursor.fetchone()
-    # print(data_1)
+    # print(data_odd)
     db.close()
     server.close()
     return data[0]

@@ -8,11 +8,11 @@ import yaml
 
 # a = ReadYaml()
 # print(a.get_value())
-from ywzt.base.base_page import PageBase
+from ywzt.base.base_page import BasePage
 from ywzt.base.read_yaml import ReadYaml
 
 
-class Test_CangKu(PageBase):
+class Test_CangKu(BasePage):
 
     def cangku(self):
         # 点击仓库管理

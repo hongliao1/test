@@ -1,9 +1,9 @@
 from time import sleep
 
-from ywzt.base.base_page import PageBase
+from ywzt.base.base_page import BasePage
 
 
-class DiaoBoDan(PageBase):
+class DiaoBoDan(BasePage):
     def crea_diaobodan(self):
         self.click("css", '.table-top>button')
         self.click("css", '#app-wms > div:nth-child(2) > div > div.ant-modal-wrap > div > div.ant-modal-content > '

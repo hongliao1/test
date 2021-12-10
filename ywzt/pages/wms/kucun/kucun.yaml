@@ -2,23 +2,28 @@ kucu:
   - operation: click
     by: css
     location: '#app-wms > section > aside > div > ul > li:nth-child(7) > ul > li:nth-child(1)>a'
+    txt: "点击库存"
 
 kuweikucun:
   - operation: click
     by: css
     location: '#app-wms > section > aside > div > ul > li:nth-child(7) > ul > li:nth-child(2)>a'
+    txt: "点击库位库存"
 
 kucubiandong:
   - operation: click
     by: css
     location: '#app-wms > section > aside > div > ul > li:nth-child(7) > ul > li:nth-child(3)>a'
+    txt: "点击库位变动"
 
 danjucaozuo:
   - operation: click
     by: css
     location: '#app-wms > section > aside > div > ul > li:nth-child(7) > ul > li:nth-child(4)>a'
+    txt: "点击单据操作"
 
 kucujiefeng:
   - operation: click
     by: css
     location: '#app-wms > section > aside > div > ul > li:nth-child(7) > ul > li:nth-child(5)>a'
+    txt: "点击库存解封"

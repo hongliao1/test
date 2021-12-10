@@ -1,9 +1,9 @@
-from ywzt.base.base_page import PageBase
+from ywzt.base.base_page import BasePage
 from ywzt.case.wms.kuweikucun.kuweikucun import KuWeiKuCun
 from ywzt.config.get_path import pages_path
 
 
-class KunCun(PageBase):
+class KunCun(BasePage):
     path = pages_path + r"\wms\kucun\kucun.yaml"
 
     def kucun(self):
@@ -11,4 +11,5 @@ class KunCun(PageBase):
 
     def kuweikucun(self):
         self.yaml_operation(self.path)
+
         return KuWeiKuCun(self.driver)

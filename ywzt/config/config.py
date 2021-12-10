@@ -21,4 +21,4 @@ uat_passwd = 'Ran@tion2021#2'
 uat_db = 'rantion_stock'
 
 # sql与语句
-sql = 'select use_qty from stock_sku where sku="EB0110" and warehouse_name="美西仓"'
+sql = 'select sum(use_qty) from stock_sku where warehouse_name= "美西仓" and sku="EB0110"'

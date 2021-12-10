@@ -1,11 +1,11 @@
 from time import sleep
 
-from ywzt.base.base_page import PageBase
+from ywzt.base.base_page import BasePage
 from ywzt.pages.wms.diaobo.diaobodan import DiaoBoDan
 from ywzt.pages.wms.diaobo.zancun import ZanCun
 
 
-class DiaoBo(PageBase):
+class DiaoBo(BasePage):
     def zancun(self):
         self.click("css", '#app-wms>section>aside>div>ul>li:nth-child(4)>ul>li:nth-child(4)>a')
         return ZanCun(self.driver)

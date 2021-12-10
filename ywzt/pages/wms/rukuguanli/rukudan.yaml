@@ -1,0 +1,17 @@
+rukudan:
+  - operation: click
+    by: css
+    location: '#app-wms > section > aside > div > ul > li > ul > li > a '
+    txt: '点击入库单'
+
+shouhuo:
+  - operation: click
+    by: css
+    location: '#app-wms > section > aside > div > ul > li> ul > li:nth-child(2) > a '
+    txt: '点击收货'
+
+tuopanguanli:
+  - operation: click
+    by: css
+    location: '#app-wms > section > aside > div > ul > li> ul > li:nth-child(3) > a '
+    txt: '点击托盘管理'

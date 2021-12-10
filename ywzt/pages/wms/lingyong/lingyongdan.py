@@ -3,10 +3,10 @@ from time import sleep
 from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
 
-from ywzt.base.base_page import PageBase
+from ywzt.base.base_page import BasePage
 
 
-class LingYongDan(PageBase):
+class LingYongDan(BasePage):
     def add_lingyongdan(self):
         sleep(2)
         # 点击领用单

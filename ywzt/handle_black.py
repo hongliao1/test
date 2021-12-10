@@ -8,7 +8,7 @@ def handle_black(func):
     def wrapper(*args, **kwargs):
         # 设置日志级别（因为pytest.int已定义级别所以这里不用设置级别了）
         # logging.basicConfig(level=logging.INFO)
-        from ywzt.base.base_page import PageBase
+        from ywzt.base.base_page import BasePage
         _black_list = [(By.XPATH, '//*[@text="请求异常"]'),
                        (By.XPATH, '//*[@text="创建失败"]'),
                        (By.XPATH, '//*[@text="报损失败，报损数量不能大于库存数量"]'),
@@ -17,7 +17,7 @@ def handle_black(func):
         _max_num = 3
         _error_num = 0
         # 调用self
-        instance: PageBase = args[0]
+        instance: BasePage = args[0]
         try:
             # 打印info等级日志，【1：】表示分割，repr为把数组字典转为字符
             logging.info("run" + func.__name__ + "\n args:\n" + repr(args[1:]) + "\n" + repr(kwargs)+"\n")

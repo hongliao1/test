@@ -24,7 +24,7 @@ def connect_uat_mysql():
                                 ssh_password=config.ssh_passwd,  # ssh密码
                                 ssh_username=config.ssh_user,  # ssh用户名
                                 remote_bind_address=(config.uat_ip, config.uat_port))  # 数据库的ip和端口
-    # 启动服务
+    # 启动ssh服务
     server.start()
     # print(server.local_bind_host)
     db = pymysql.Connect(host='127.0.0.1',  # 这里必须是’127.0.0.1‘
@@ -34,7 +34,8 @@ def connect_uat_mysql():
     # 创建游标
     cursor = db.cursor()
     # 执行sql语句
-    cursor.execute(config.sql)  # 获取数据
+    cursor.execute(config.sql)
+    # 获取数据
     data = cursor.fetchone()
     # print(data_odd)
     db.close()
@@ -55,6 +56,9 @@ class ConnectMySQL:
     def __str__(self):
         return '%s' % connect_uat_mysql()
 
+def num():
+    num1 = ConnectMySQL().__str__()
+    return num1
 
 def connect_mysql_1(num_1: int):
     def connect_mysql(func):
@@ -74,9 +78,7 @@ def connect_mysql_1(num_1: int):
     return connect_mysql
 
 
-def num():
-    num1 = ConnectMySQL().__str__()
-    return num1
+
 
 
 # 不可用于pytest，因为pytest不能存在__init__

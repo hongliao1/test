@@ -25,6 +25,7 @@ def browser(value):
         return getattr(webdriver, value)()
     except Exception as i:
         print(i)
+        # webdriver.Firefox
         return webdriver.Chrome()
 
 
@@ -52,7 +53,7 @@ class BasePage(object):
     def open(self):
         self.driver.get(self.url)
 
-    def one_1(self, key):
+    def by_object(self, key):
         if key == "css":
             return By.CSS_SELECTOR
         elif key == "xpath":
@@ -63,6 +64,13 @@ class BasePage(object):
             return By.CLASS_NAME
         elif key == 'some_text':
             return By.PARTIAL_LINK_TEXT
+        elif key == 'all_text':
+            return By.LINK_TEXT
+        elif key == 'name':
+            return By.NAME
+        elif key == 'tag_name':
+            return By.TAG_NAME
+
         # elif key == "wait":
         #     pass
         else:
@@ -73,16 +81,16 @@ class BasePage(object):
         if isinstance(key, tuple):
             return self.driver.find_element(*key)
         else:
-            self.sleep(0.1)
-            self.wait_for_click((self.one_1(key), value))
-            return self.driver.find_element(self.one_1(key), value)
+            # self.sleep(0.1)
+            self.wait_for_click((self.by_object(key), value))
+            return self.driver.find_element(self.by_object(key), value)
 
     @handle_black
     def finds(self, key, value: str = None):
         try:
             self.sleep(0.2)
-            self.wait_for_click((self.one_1(key), value))
-            return self.driver.find_elements(self.one_1(key), value)
+            self.wait_for_click((self.by_object(key), value))
+            return self.driver.find_elements(self.by_object(key), value)
         except Exception as f:
             logging.info("查找元素失败：%s" % f)
             return None
@@ -100,7 +108,7 @@ class BasePage(object):
     def wait_for_click(self, key, time=10):
         WebDriverWait(self.driver, time).until(expected_conditions.element_to_be_clickable(key))
 
-    def yaml_operation(self, case_path, data_odd: dict = None):
+    def yaml_operation(self, case_path, *args):
         with open(case_path, encoding='utf-8') as f:
             # 获取调用yaml文件的函数【0】表示第一层：class名，【1】表示第二层逐级类推。
             name = inspect.stack()[1].function
@@ -108,11 +116,11 @@ class BasePage(object):
         # 将读取的yaml（字典形式）转成json格式（字符串）
         raw = json.dumps(location)
         # 读取配置文件
-        data: dict = ReadYaml().readyaml(self.data_path, data_odd)
+        data: dict = ReadYaml().readyaml(self.data_path, args)
         # 遍历配置文件中的值
         for by, value in data.items():
             # 替换值。固定格式。前面带f的两个{}才相当于一个{}
-            raw = raw.replace(f'${{{by}}}', value)
+            raw = raw.replace(f'${{{by}}}', str(value))
         # 转回字典格式
         location = json.loads(raw)
         for data1 in location:
@@ -141,7 +149,7 @@ class BasePage(object):
             if 'sliding' == data1['operation']:
                 self.sliding(data1['by'], data1['location'])
             if data1['operation'] == 'get_odd':
-                self.sleep(1)
+                self.sleep(0.5)
                 text = self.find(data1['by'], data1['location']).text
                 return text
 
@@ -165,18 +173,3 @@ class BasePage(object):
 
     def quit(self):
         self.driver.quit()
-
-
-# data_path = pages_path + r'\wms\wms_module.yaml'
-# with open(case_path, encoding='utf-8') as f:
-#     # 获取调用yaml文件的函数【0】表示第一层：class名，【1】表示第二层逐级类推。
-#     name = inspect.stack()[1].function
-#     location = yaml.safe_load(f)[name]
-# # 将读取的yaml（字典形式）转成json格式（字符串）
-# raw = json.dumps(location)
-# # 读取配置文件
-# data: dict = ReadYaml().readyaml(self.case_path, data_odd)
-# # 遍历配置文件中的值
-# for by, value in data.items():
-#     # 替换值。固定格式。前面带f的两个{}才相当于一个{}
-#     raw = raw.replace(f'${{{by}}}', value)

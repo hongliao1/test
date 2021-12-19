@@ -1,4 +1,9 @@
 kuwei_baosun:
+  - operation: wait
+    by: css
+    location: '#props-tags > main > div > div.a-table-column > div > div > div > div > div > div > div > div > div.ant-table-body > table > tbody > tr:nth-child(1) > td:nth-child(13) > button'
+    txt: '等待报损按钮可被点击'
+
   - operation: click
     by: xpath
     location: '//*[@id="props-tags"]//form/div/div[1]/div/div[2]/div/span/div/div/div'
@@ -22,7 +27,7 @@ kuwei_baosun:
 
   - operation: sleep
     time: 0.5
-    txt: "等待"
+    txt: '等待0.5秒'
 
   - operation: click
     by: xpath
@@ -31,18 +36,17 @@ kuwei_baosun:
     txt: "点击查询"
 
   - operation: sleep
-    time: 1
-    txt: "等待"
+    time: 0.5
+    txt: "等待0.5秒"
 
   - operation: click
     by: css
-    location: '#props-tags > main > div > div> div > div > div > div > div > div > div >
-                div > div> table > tbody > tr:nth-child(1) > td:nth-child(13) > button'
+    location: '#props-tags > main > div > div.a-table-column > div > div > div > div > div > div > div > div > div.ant-table-body > table > tbody > tr > td:nth-child(13) > button'
     txt: "点击报损"
 
   - operation: sleep
-    time: 1
-    txt: ""
+    time: 0.5
+    txt: "等待0.5秒"
 
   - operation: input
     by: css

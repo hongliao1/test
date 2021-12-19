@@ -1,6 +1,7 @@
 # from ywzt.config.get_path import GetPath
 
 driver_type = 'chrome'
+# driver_type = 'Firefox'
 base_url = 'http://erp-test.rantion.com/login/'
 username = '廖宏'
 password = '000000'

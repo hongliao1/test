@@ -10,7 +10,6 @@ class RuKuBase(BasePage):
         self.yaml_operation(self.case_path)
 
     def get_ib_odd(self):
-        # print(self.yaml_operation(self.case_path))
         return self.yaml_operation(self.case_path)
 
     def shouhuo(self, data):

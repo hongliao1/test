@@ -50,7 +50,7 @@ shouhuo:
   - operation: input
     by: css
     location: '#props-tags > main > div > div:nth-child(1) > input'
-    input: ${ib}
+    input: ${odd1}
     txt: '输入入库单'
 
   - operation: action

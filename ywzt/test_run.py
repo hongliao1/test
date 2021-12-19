@@ -7,7 +7,6 @@ import yaml
 from ywzt.base.connect_mysql import connect_mysql_1
 
 
-
 class Testrun:
     def setup(self):
         self.login = LoginPage()
@@ -24,13 +23,14 @@ class Testrun:
     #     self.login.quit()
 
     @connect_mysql_1(int(
-        yaml.safe_load(open(r'E:\job\test\ywzt\data_files\wms\baosunguanli\baosun_data.yaml', encoding='utf-8'))[0][
+        yaml.safe_load(open(r'E:\job\test\ywzt\data_files\wms\baosunguanli\baosun_data.yaml', encoding='utf-8'))[
             'num']))
     # @pytest.mark.run(order=2)
     def test_shenhe_pass(self):
         self.login.wms_click().kucun().kuweikucun().kuwei_baosun()
+        sleep(1)
         self.login.wms_click().baosunguanli().baosun().shenhe_tongguo()
-        sleep(2)
+        sleep(1)
         self.login.quit()
 
     def test_ruku(self):
@@ -38,9 +38,8 @@ class Testrun:
         self.login.wms_click().rukuguanli().rukudan().createrukudan()
         # 获取入库单号，固定格式
         ib_odd = self.login.wms_click().rukuguanli().rukudan().get_ib_odd()
-        data = {'ib': ib_odd}
         # 完成收货
-        self.login.wms_click().rukuguanli().shouhuo().shouhuo(data)
+        self.login.wms_click().rukuguanli().shouhuo().shouhuo(ib_odd)
         # 点击一键入库
         self.login.wms_click().rukuguanli().rukudan().yijianruku()
 

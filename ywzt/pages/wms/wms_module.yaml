@@ -16,7 +16,7 @@ chukuguanli:
     location: '#app-wms>section>aside>div>ul>li:nth-child(3)>div>span>span'
     txt: "点击出库管理"
 #    name: "出库管理"
-diaobo:
+diaoboguanli:
   - operation: click
     by: css
     location: '#app-wms>section>aside>div>ul>li:nth-child(4)>div>span>span'

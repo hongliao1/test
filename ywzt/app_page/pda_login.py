@@ -1,33 +1,33 @@
+from ywzt.app_page.diaoboguanli.diaoboguanli import DiaoBoGuanLi
 from ywzt.app_page.rukuguanli.rukuguanli import RuKuGuanLi
 from ywzt.base.app_bace_page import AppBace
 
 
 class PdaFirstPage(AppBace):
-    def setup(self):
-        self.input('id', 'com.rantion.ns.pda:id/userEditText', '廖宏')
-        self.input('id', 'com.rantion.ns.pda:id/passwordEditText', "000000")
-        self.click('id', 'com.rantion.ns.pda:id/btn_setting')
-        self.click('xpath', '//*[@text="测试环境"]')
-        self.click('xpath', '//*[@text="确定"]')
-        self.click('xpath', '//*[@text="登录"]')
+    case_path = r'E:\job\test\ywzt\app_page\pda_lodin.yaml'
+    data_path = r'E:\job\test\ywzt\config\login.yaml'
+
+    def setup_class(self):
+        self.app_yaml_operation(self.case_path)
 
     def rukuguanli(self):
-        self.setup()
+        self.setup_class()
         self.click('xpath', '//*[@text="入库管理"]')
         return RuKuGuanLi(self.driver)
 
     def gongchangguanli(self):
-        self.setup()
+        self.setup_class()
         self.click('xpath', '//*[@text="工厂管理"]')
 
     def chukuguanli(self):
-        self.setup()
+        self.setup_class()
         self.click('xpath', '//*[@text="出库管理"]')
 
     def diaoboguanli(self):
-        self.setup()
+        self.setup_class()
         self.click('xpath', '//*[@text="调拨管理"]')
+        return DiaoBoGuanLi(self.driver)
 
     def pandianguanli(self):
-        self.setup()
+        self.setup_class()
         self.click('xpath', '//*[@text="盘点管理"]')

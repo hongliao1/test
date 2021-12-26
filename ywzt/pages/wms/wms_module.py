@@ -2,7 +2,7 @@ from ywzt.base.base_page import BasePage
 from ywzt.pages.wms.baosun.baosunshenhe import BaoSunShenHe
 from ywzt.pages.wms.cangku.cangku import Test_CangKu
 from ywzt.pages.wms.chukuguanli.chuku import ChuKu
-from ywzt.pages.wms.diaobo.dioabo import DiaoBo
+from ywzt.pages.wms.diaoboguanli.diaoboguanli import DiaoBo
 from ywzt.pages.wms.kucun.kucun import KunCun
 from ywzt.pages.wms.lingyong.lingyongdan import LingYongDan
 from ywzt.config.get_path import pages_path
@@ -16,7 +16,7 @@ class WmsModule(BasePage):
         self.yaml_operation(self.case_path)
         return RuKuGuanLi(self.driver)
 
-    def diaobo(self):
+    def diaoboguanli(self):
         self.yaml_operation(self.case_path)
         return DiaoBo(self.driver)
 

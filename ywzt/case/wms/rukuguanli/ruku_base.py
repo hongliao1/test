@@ -12,8 +12,8 @@ class RuKuBase(BasePage):
     def get_ib_odd(self):
         return self.yaml_operation(self.case_path)
 
-    def shouhuo(self, data):
-        self.yaml_operation(self.case_path, data)
+    def shouhuo(self, *args):
+        self.yaml_operation(self.case_path, *args)
 
     def yijianruku(self):
         self.yaml_operation(self.case_path)

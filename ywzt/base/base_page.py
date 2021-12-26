@@ -34,8 +34,6 @@ class BasePage(object):
     case_path = ''
     data_path = ''
 
-    # data = {}
-
     def __init__(self, driver: WebDriver = None):
         if driver is None:
             self.driver = browser(driver_type)
@@ -70,9 +68,6 @@ class BasePage(object):
             return By.NAME
         elif key == 'tag_name':
             return By.TAG_NAME
-
-        # elif key == "wait":
-        #     pass
         else:
             return '定位方法错误'
 
@@ -81,7 +76,6 @@ class BasePage(object):
         if isinstance(key, tuple):
             return self.driver.find_element(*key)
         else:
-            # self.sleep(0.1)
             self.wait_for_click((self.by_object(key), value))
             return self.driver.find_element(self.by_object(key), value)
 
@@ -120,16 +114,29 @@ class BasePage(object):
         # 遍历配置文件中的值
         for by, value in data.items():
             # 替换值。固定格式。前面带f的两个{}才相当于一个{}
-            raw = raw.replace(f'${{{by}}}', str(value))
+            raw = raw.replace(f'${{{by}}}', value)
         # 转回字典格式
         location = json.loads(raw)
+        list_1 = []
+        list_2 = []
+        # 先获得该用例中调用get_odd的总个数，用于下面作比较
         for data1 in location:
-            if data1['txt']:
-                logging.info('正在执行：%s ' % data1['txt'])
+            data1: dict
+            if data1['operation'] == 'get_odd':
+                list_2.append(data1['operation'])
+        for data1 in location:
+            data1: dict
+            for key in data1.keys():
+                if 'txt' not in key:
+                    pass
+                else:
+                    logging.info('正在执行：%s ' % data1['txt'])
             if "click" == data1['operation']:
                 self.click(data1['by'], data1['location'])
+                continue
             if 'input' == data1['operation']:
                 self.input(data1['by'], data1['location'], data1['input'])
+                continue
             if 'wait' == data1['operation']:
                 if data1['by'] == 'css':
                     data1['by'] = By.CSS_SELECTOR
@@ -140,31 +147,36 @@ class BasePage(object):
                 elif data1['by'] == 'class':
                     data1['by'] = By.CLASS_NAME
                 self.wait_for_click((data1['by'], data1['location']))
+                continue
             if 'sleep' == data1['operation']:
                 self.sleep(data1['time'])
-                # pass
+                continue
             if "action" == data1['operation']:
                 self.action(data1['key'])
-                self.sleep(1)
+                continue
             if 'sliding' == data1['operation']:
                 self.sliding(data1['by'], data1['location'])
+                continue
             if data1['operation'] == 'get_odd':
-                self.sleep(0.5)
                 text = self.find(data1['by'], data1['location']).text
-                return text
+                if text is None:
+                    text = self.find(data1['by'], data1['location']).get_attribute('textContent')
+                    if text is None:
+                        text = self.find(data1['by'], data1['location']).get_attribute('innerHTML')
+                list_1.append(text)
+                if len(list_1) == len(list_2):
+                    return tuple(list_1)
 
-            # if data1['txt']:
-            #     print('当前执行：%s' % data1['txt'])
-            # else:
-            #     pass
+    def keys(self, key):
+        if key == 'backspace':
+            return Keys.BACK_SPACE
+        elif key == 'enter':
+            return Keys.ENTER
 
     # 模拟键盘操作
     def action(self, key):
         action = ActionChains(self.driver)
-        if key == 'backspace':
-            action.send_keys(Keys.BACK_SPACE).perform()
-        if key == 'enter':
-            action.send_keys(Keys.ENTER).perform()
+        action.send_keys(self.keys(key)).perform()
 
     # 滑动到元素直至元素可见
     def sliding(self, key, value):

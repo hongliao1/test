@@ -5,13 +5,14 @@ from selenium import webdriver
 # sleep(3)
 # os.system("kill MEmu")
 # os.system("MEmu")
-os.system("adb devices")
-os.system('MEmu')
-sleep(1)
-os.system('adb connect 127.0.0.1:11509')
-os.system('appium')
-sleep(1)
+# os.system("adb devices")
+# os.system('MEmu')
+# sleep(1)
+# os.system('adb connect 127.0.0.1:11509')
+# os.system('appium')
+# sleep(1)
 from selenium.webdriver.common.by import By
+
 
 # driver = webdriver.Chrome()
 # driver.get("http://www.baidu.com")
@@ -22,3 +23,13 @@ from selenium.webdriver.common.by import By
 # element = driver.find_element(By.ID, 'su')
 # print(element.text)
 # driver.quit()
+
+def foo(num):
+    print('a....')
+    while num < 10:
+        num = num + 1
+        yield num
+
+
+for n in foo(0):
+    print(n)

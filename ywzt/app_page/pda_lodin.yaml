@@ -1,0 +1,26 @@
+setup_class:
+  - operation: input
+    by: id
+    location: 'com.rantion.ns.pda:id/userEditText'
+    input: ${username}
+
+  - operation: input
+    by: id
+    location: 'com.rantion.ns.pda:id/passwordEditText'
+    input: ${password}
+
+  - operation: click
+    by: id
+    location: 'com.rantion.ns.pda:id/btn_setting'
+
+  - operation: click
+    by: xpath
+    location: '//*[@text="测试环境"]'
+
+  - operation: click
+    by: xpath
+    location: '//*[@text="确定"]'
+
+  - operation: click
+    by: xpath
+    location: '//*[@text="登录"]'

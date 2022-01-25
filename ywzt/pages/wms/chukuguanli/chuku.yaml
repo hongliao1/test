@@ -1,0 +1,11 @@
+chukudan:
+  - operation: click
+    by: css
+    location: '#app-wms>section>aside>div>ul>li:nth-child(3)>ul>li>a'
+    txt: '点击出库单'
+
+jianhuodan:
+  - operation: click
+    by: css
+    location: '#app-wms>section>aside>div>ul>li:nth-child(3)>ul>li:nth:child(2)>a>span'
+    txt: '点击拣货单'

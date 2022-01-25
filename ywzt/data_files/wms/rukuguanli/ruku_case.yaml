@@ -1,0 +1,140 @@
+createrukudan:
+  - operation: click
+    by: css
+    location: '#props-tags > main > div > div > div > div > div > div > button:nth-child(2) '
+    txt: '点击创建入库单'
+
+  - operation: click
+    by: css
+    location: '#app-wms > div > div > div > div > div > div > form > div > div:nth-child(1) > div > div > div > span > div > div > div'
+    txt: '点击仓库'
+
+  - operation: input
+    by: css
+    location: '#app-wms > div:nth-child(2) > div > div > div > div > div > form > div > div:nth-child(1) > div > div > div > span > div > div > div > div > div > input'
+    input: ${cangku}
+    txt: '输入仓库'
+
+  - operation: input
+    by: css
+    location: '#app-wms > div:nth-child(2) > div > div> div > div> div > form > div > div:nth-child(2) > div > div > div > span > span > input'
+    input: ${sku}
+    txt: '输入sku'
+
+  - operation: click
+    by: css
+    location: '#app-wms > div:nth-child(2) > div > div > div > div.ant-modal-content > div > form > div > div:nth-child(2) > div > div > div > span > span > span > i '
+    txt: '点击搜索'
+
+  - operation: click
+    by: css
+    location: '#app-wms > div:nth-child(2) > div > div > div > div> div > div > div > div > div > div > div > table > tbody > tr > td:nth-child(4)'
+    txt: '点击输入数量的框'
+
+  - operation: action
+    key: 'backspace'
+    txt: '点击backspace键'
+
+  - operation: input
+    by: css
+    location: '#app-wms > div:nth-child(2) > div > div > div > div> div > div > div > div > div > div > div > table > tbody > tr > td:nth-child(4) > input'
+    input: ${num}
+    txt: '输入数量'
+
+  - operation: click
+    by: css
+    location: '#app-wms > div:nth-child(2) > div > div > div > div > div > div > button:nth-child(2)'
+    txt: '点击确定'
+
+shouhuo:
+  - operation: input
+    by: css
+    location: '#props-tags > main > div > div:nth-child(1) > input'
+    input: ${odd1}
+    txt: '输入入库单'
+
+  - operation: action
+    key: 'enter'
+    txt: '按下enter键'
+
+  - operation: click
+    by: css
+    location: '#props-tags > main > div > div.a-table-column > div > div > div > div > div > div > div > div > div > table > thead > tr > th > span > div > span > div > label > span'
+    txt: '点击勾选全部'
+
+  - operation: click
+    by: css
+    location: '#props-tags > main > div > div:nth-child(3) > button:nth-child(2)'
+    txt: '点击完成收货'
+
+get_ib_odd:
+  - operation: click
+    by: css
+    location: '#props-tags > main > div > div:nth-child(1) > div > div:nth-child(2) > form > div > div:nth-child(1) > div > div > div > span > div > div > div'
+    txt: '点击仓库'
+
+  - operation: input
+    by: css
+    location: '#props-tags > main > div > div:nth-child(1) > div.top-search-from > div:nth-child(2) > form > div > div:nth-child(1) > div > div.ant-col.ant-col-16.ant-form-item-control-wrapper > div > span > div > div > div > div.ant-select-search.ant-select-search--inline > div > input'
+    input: ${cangku}
+    txt: '输入仓库'
+
+  - operation: click
+    by: css
+    location: '#props-tags > main > div > div:nth-child(1) > div.top-search-from > div:nth-child(2) > form > div > div:nth-child(4) > div > div > div > span > a'
+    txt: '点击更多'
+
+  - operation: input
+    by: css
+    location: '#props-tags > main > div > div:nth-child(1) > div.top-search-from > div:nth-child(2) > form > div > div:nth-child(12) > div > div.ant-col.ant-col-16.ant-form-item-control-wrapper > div > span > span > input'
+    input: ${sku}
+    txt: '输入sku'
+
+  - operation: click
+    by: css
+    location: '#props-tags > main > div > div:nth-child(1) > div.top-search-from > div:nth-child(2) > form > div > div:nth-child(16) > div > div > div > span > button.ant-btn.ant-btn-primary'
+    txt: '点击查询'
+
+  - operation: get_odd
+    by: css
+    location: '#props-tags > main > div > div.r-table-column > div > div > div > div.ant-table-wrapper > div > div > div > div > div.ant-table-fixed-left > div.ant-table-body-outer > div > table > tbody > tr:nth-child(1) > td > a'
+    txt: '获取入库单号'
+
+yijianruku:
+  - operation: click
+    by: css
+    location: '#props-tags > main > div > div:nth-child(1) > div > div:nth-child(2) > form > div > div:nth-child(1) > div > div > div > span > div > div > div'
+    txt: '点击仓库'
+
+  - operation: input
+    by: css
+    location: '#props-tags > main > div > div:nth-child(1) > div.top-search-from > div:nth-child(2) > form > div > div:nth-child(1) > div > div.ant-col.ant-col-16.ant-form-item-control-wrapper > div > span > div > div > div > div.ant-select-search.ant-select-search--inline > div > input'
+    input: ${cangku}
+    txt: '输入仓库'
+
+  - operation: click
+    by: css
+    location: '#props-tags > main > div > div:nth-child(1) > div.top-search-from > div:nth-child(2) > form > div > div:nth-child(4) > div > div > div > span > a'
+    txt: '点击更多'
+
+  - operation: input
+    by: css
+    location: '#props-tags > main > div > div:nth-child(1) > div.top-search-from > div:nth-child(2) > form > div > div:nth-child(12) > div > div.ant-col.ant-col-16.ant-form-item-control-wrapper > div > span > span > input'
+    input: ${sku}
+    txt: '输入sku'
+
+  - operation: click
+    by: css
+    location: '#props-tags > main > div > div:nth-child(1) > div.top-search-from > div:nth-child(2) > form > div > div:nth-child(16) > div > div > div > span > button.ant-btn.ant-btn-primary'
+    txt: '点击查询'
+
+  - operation: click
+    by: css
+    location: '#props-tags > main > div > div > div > div > div > div > div > div > div > div > div > div > div > table > tbody > tr:nth-child(1) > td > div > button:nth-child(2)'
+    txt: '点击一键入库'
+
+  - operation: click
+    by: css
+    location: '#app-wms > div > div > div > div > div > div > div > button:nth-child(2)'
+    txt: '确认一键入库'
+

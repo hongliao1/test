@@ -22,6 +22,7 @@ pms_click:
   - operation: wait
     by: css
     location: '.erp-flex_OMnLA>div>div:nth-child(7)>div>button>span'
+    txt: ""
 
   - operation: click
     by: css
@@ -33,27 +34,33 @@ wms_click:
   - operation: wait
     by: css
     location: '.erp-flex_OMnLA>div>div:nth-child(7)>div>button>span'
+    txt: ""
 
   - operation: click
     by: css
     location: '#app>section>div>div:nth-child(2)>div>ul>li:nth-child(3)>span>div'
+    txt: "点击仓储管理"
 
 oms_click:
 #  等待元素出现
   - operation: wait
     by: css
     location: '.erp-flex_OMnLA>div>div:nth-child(7)>div>button>span'
+    txt: ""
 
   - operation: click
     by: css
     location: '#app>section>div>div:nth-child(2)>div>ul>li:nth-child(4)>span>div'
+    txt: "点击订单管理"
 
 tms_click:
 #  等待元素出现
   - operation: wait
     by: css
     location: '.erp-flex_OMnLA>div>div:nth-child(7)>div>button>span'
+    txt: ""
 
   - operation: click
     by: css
     location: '#app>section>div>div:nth-child(2)>div>ul>li:nth-child(5)>span>div'
+    txt: "点击物流管理"

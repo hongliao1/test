@@ -1,0 +1,9 @@
+yudingcang:
+  - operation: click
+    by: css
+    location: '#rantion-tms>section>aside>div>ul>li>ul>li>ul>li:nth-child(4)>ul>li>span'
+
+dingcang:
+  - operation: click
+    by: css
+    location: '#rantion-tms>section>aside>div>ul>li>ul>li>ul>li:nth-child(4)>ul>li:nth-child(2)>span'

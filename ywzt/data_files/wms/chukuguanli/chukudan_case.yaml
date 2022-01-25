@@ -1,0 +1,32 @@
+get_ob_odd:
+  - operation: click
+    by: xpath
+    location: '//*[@name="warehouseCode"]/div[2]/div/span/div/div/div'
+    txt: '点击仓库筛选框'
+
+  - operation: input
+    by: xpath
+    location: '//*[@name="warehouseCode"]/div[2]/div/span/div/div/div/div[2]/div/input'
+    input: '谷仓悉尼仓-贸易'
+    txt: '输入仓库'
+
+  - operation: click
+    by: css
+    location: '#props-tags > main > div > div:nth-child(1) > div.top-search-from > div:nth-child(2) > form > div > div:nth-child(4) > div > div > div > span > a'
+    txt: '点击更多'
+
+  - operation: input
+    by: css
+    location: '#props-tags > main > div > div:nth-child(1) > div.top-search-from > div:nth-child(2) > form > div > div:nth-child(11) > div > div.ant-col.ant-col-16.ant-form-item-control-wrapper > div > span > span > input'
+    input: 'EC1247'
+    txt: '输入SKU'
+
+  - operation: click
+    by: xpath
+    location: '//*[@id="props-tags"]/main/div/div[1]/div[1]/div[2]/form/div/div[13]/div/div/div/span/button[1]'
+    txt: '点击查询'
+
+  - operation: get_odd
+    by: css
+    location: '#props-tags > main > div > div.a-table-column > div > div > div > div > div > div > div >div.ant-table-fixed-left > div.ant-table-body-outer > div > table > tbody > tr:nth-child(1)> td:nth-child(2) > a'
+    txt: '获取出库单号'

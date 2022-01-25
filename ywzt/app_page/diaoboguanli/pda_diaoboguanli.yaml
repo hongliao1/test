@@ -1,0 +1,139 @@
+diaobo_jianhuo:
+  - operation: click
+    by: xpath
+    location: '//*[@text="调拨拣货"]'
+
+  - operation: scan_code
+    odd: ${odd2}
+
+  - operation: get_kuwei
+    by: id
+    location: 'com.rantion.ns.pda:id/code'
+
+  - operation: scan_code
+    odd: ''
+
+  - operation: click
+    by: id
+    location: 'com.rantion.ns.pda:id/btn_pickbysku'
+
+  - operation: scan_code
+    odd: ${sku}
+
+  - operation: input
+    by: id
+    location: 'com.rantion.ns.pda:id/edit_qty'
+    input: ${num}
+
+  - operation: click
+    by: id
+    location: 'com.rantion.ns.pda:id/btn_sure'
+
+  - operation: click
+    by: id
+    location: 'com.rantion.ns.pda:id/tv_popup_window_ok'
+
+  - operation: click
+    by: id
+    location: 'com.rantion.ns.pda:id/btn'
+
+  - operation: click
+    by: xpath
+    location: '//*[@text="返回"]'
+
+  - operation: click
+    by: xpath
+    location: '//*[@text="确定"]'
+
+  - operation: click
+    by: xpath
+    location: '//*[@text="录入分箱信息"]'
+
+  - operation: scan_code
+    odd: ${odd1}
+
+  - operation: click
+    by: xpath
+    location: '//*[@text="添加箱子"]'
+
+  - operation: click
+    by: xpath
+    location: '//*[@text="录入"]'
+
+  - operation: scan_code
+    odd: ${sku}
+
+  - operation: input
+    by: id
+    location: 'com.rantion.ns.pda:id/edt_code'
+    input: ${num}
+
+  - operation: click
+    by: xpath
+    location: '//*[@text="确定装箱产品"]'
+
+  - operation: input
+    by: id
+    location: 'com.rantion.ns.pda:id/edt_longth'
+    input: 50
+
+  - operation: input
+    by: id
+    location: 'com.rantion.ns.pda:id/edt_width'
+    input: 50
+
+  - operation: input
+    by: id
+    location: 'com.rantion.ns.pda:id/edt_height'
+    input: 50
+
+  - operation: input
+    by: id
+    location: 'com.rantion.ns.pda:id/edt_weight'
+    input: 10
+
+  - operation: click
+    by: xpath
+    location: '//*[@text="确定装箱产品"]'
+
+  - operation: click
+    by: xpath
+    location: '//*[@text="确认分箱信息"]'
+
+diaobo_pici_fayun:
+  - operation: click
+    by: xpath
+    location: '//*[@text="批次扫描"]'
+
+  - operation: scan_code
+    odd: ${odd1}
+
+  - operation: scan_code
+    odd: ${odd2}
+
+  - operation: click
+    by: xpath
+    location: '//*[@text="绑定"]'
+
+  - operation: click
+    by: xpath
+    location: '//*[@text="确定"]'
+
+  - operation: click
+    by: xpath
+    location: '//*[@text="转运扫描"]'
+
+  - operation: scan_code
+    odd: ${odd1}
+
+  - operation: click
+    by: xpath
+    location: '//*[@text="确认发运"]'
+
+  - operation: click
+    by: xpath
+    location: '//*[@text="确认发运"]'
+
+  - operation: click
+    by: xpath
+    location: '//*[@text="确定"]'

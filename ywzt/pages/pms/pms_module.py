@@ -1,6 +1,6 @@
-from ywzt.base.base_page import PageBase
+from ywzt.base.base_page import BasePage
 
 
-class PmsModule(PageBase):
+class PmsModule(BasePage):
     def pms_operation(self):
         pass

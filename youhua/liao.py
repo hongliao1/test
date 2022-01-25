@@ -31,7 +31,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 
-from ywzt.base.base_page import PageBase
+from ywzt.base.base_page import BasePage
 
 # def test_1():
 #     logging.basicConfig(level=logging.DEBUG)
@@ -69,7 +69,7 @@ driver = webdriver.Chrome(options=option)
 driver.find_element(By.CSS_SELECTOR, '#props-tags>main>div>div>div>div>div>label:nth-child(2)>span:nth-child(2)').click()
 driver.find_element(By.CSS_SELECTOR, '"#props-tags>main>div>div>div>div:nth-child(2)>form>div>div>div>div:nth-child(2)>div>span>div>div>div"').click()
 driver.find_element(By.CSS_SELECTOR, '#props-tags>main>div>div>div>div:nth-child(2)>form>div>div>div>div:nth-child(2)>div>span>div>div>div>div:nth-child(2)>div>input').send_keys('美西仓')
-# PageBase.yaml_operation(r'E:\job\test\ywzt\pages\wms\baosunguanli\baosun_pass.yaml')
+# BasePage.yaml_operation(r'E:\job\test\ywzt\pages\wms\baosunguanli\baosun_pass.yaml')
 # with open(r'E:\job\test\youhua\baosun_pass.yaml', encoding='utf-8') as f:
 #     # 获取调用yaml文件的函数【0】表示第一层：class名，【1】表示第二层逐级类推。
 #     # name = inspect.stack()[1].function

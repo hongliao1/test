@@ -1,29 +1,40 @@
 import inspect
 import json
 import logging
+import os
 from time import sleep
 
 import yaml
 from appium import webdriver
+from appium.webdriver.common.mobileby import MobileBy
+from selenium.webdriver.remote.webdriver import WebDriver
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
+
+from ywzt.app_config.app_handle_black import app_handle_black
+from ywzt.app_config.app_config import page_name
 
 from ywzt.base.read_yaml import ReadYaml
 
 
-class AppBace(object):
-    def __init__(self):
+class AppBace():
+    data_path = ''
+
+    def __init__(self, driver: WebDriver = None):
         desired_caps = {'platformName': 'Android',
                         'platformVersion': '7.1.2',
                         'deviceName': '127.0.0.1-11509',
                         'appPackage': 'com.rantion.ns.pda',
+                        'noReset': True,
+                        'donotStopAppOnReset': True,
                         'appActivity': 'com.rantion.ns_pda.ui.main.activity.WelcomActivity',
-                        'automationName': 'uiautomator2'}
-        self.driver = webdriver.Remote('http://127.0.0.1:4723/wd/hub', desired_caps)
+                        'automationName': 'uiautomator2'
+                        }
+        if driver is None:
+            self.driver = webdriver.Remote('http://127.0.0.1:4723/wd/hub', desired_caps)
+        else:
+            self.driver = driver
         self.driver.implicitly_wait(5)
-
-    def quit(self):
-        self.driver.quit()
 
     def max_window(self):
         self.driver.maximize_window()
@@ -31,43 +42,40 @@ class AppBace(object):
     def min_window(self):
         self.driver.minimize_window()
 
-    # def open(self):
-    #     self.driver.get(self.url)
-
-    # @handle_black
-    def find(self, key, value: str = None):
-        if isinstance(key, tuple):
-            return self.driver.find_element(*key)
+    def element(self, key):
+        if key == "css":
+            return MobileBy.CSS_SELECTOR
+        elif key == "xpath":
+            return MobileBy.XPATH
+        elif key == "id":
+            return MobileBy.ID
+        elif key == "class":
+            return MobileBy.CLASS_NAME
+        elif key == 'some_text':
+            return MobileBy.PARTIAL_LINK_TEXT
+        elif key == 'accessibility_id':
+            return MobileBy.ACCESSIBILITY_ID
         else:
-            self.sleep(1)
-            if key == "css":
-                return self.driver.find_element(By.CSS_SELECTOR, value)
-            elif key == "xpath":
-                return self.driver.find_element(By.XPATH, value)
-            elif key == "id":
-                return self.driver.find_element(By.ID, value)
-            elif key == "class":
-                return self.driver.find_element(By.CLASS_NAME, value)
-            elif key == 'some_text':
-                return self.driver.find_element(By.PARTIAL_LINK_TEXT, value)
-            else:
-                return self.driver.find_element(key, value)
+            return '定位方法错误'
 
-    # @handle_black
-    def finds(self, key, value):
+    @app_handle_black
+    def find(self, key, value: str = None):
         try:
-            WebDriverWait(self.driver, 15).until(expected_conditions.visibility_of_element_located((key, value)))
-            self.sleep(1)
-            if key == "css":
-                return self.driver.find_elements(By.CSS_SELECTOR, value)
-            elif key == "xpath":
-                return self.driver.find_elements(By.XPATH, value)
-            elif key == "id":
-                return self.driver.find_elements(By.ID, value)
-            elif key == "class":
-                return self.driver.find_elements(By.CLASS_NAME, value)
+            if isinstance(key, tuple):
+                return self.driver.find_element(*key)
             else:
-                return self.driver.find_elements(key, value)
+                self.wait_for_click((self.element(key), value))
+                return self.driver.find_element(self.element(key), value)
+        except Exception as f:
+            print('查找元素失败：%s' % f)
+            return None
+
+    def finds(self, key, value: str = None):
+        self.sleep(0.5)
+        try:
+            # self.sleep(0.2)
+            self.wait_for_click((self.element(key), value))
+            return self.driver.find_elements(self.element(key), value)
         except Exception as f:
             logging.info("查找元素失败：%s" % f)
             return None
@@ -85,48 +93,45 @@ class AppBace(object):
     def wait_for_click(self, key, time=10):
         WebDriverWait(self.driver, time).until(expected_conditions.element_to_be_clickable(key))
 
-    def yaml_operation(self, case_path):
+    def app_yaml_operation(self, case_path, *args):
         with open(case_path, encoding='utf-8') as f:
-            # 获取调用yaml文件的函数【0】表示第一层：class名，【1】表示第二层逐级类推。
             name = inspect.stack()[1].function
             location = yaml.safe_load(f)[name]
-        # 将读取的yaml（字典形式）转成json格式（字符串）
         raw = json.dumps(location)
-        # 读取配置文件
-        data1: dict = ReadYaml().readyaml(self.data_path)
-        # 遍历配置文件中的值
-        for by, value in data1.items():
-            # 替换值。固定格式。前面带f的两个{}才相当于一个{}
-            raw = raw.replace(f'${{{by}}}', value)
-        # 转回字典格式
+        data_1 = ReadYaml().readyaml(self.data_path, args)
+        for key, value in data_1.items():
+            raw = raw.replace(f'${{{key}}}', value)
         location = json.loads(raw)
+        list_1 = []
         for data in location:
-            if "click" == data['operation']:
-                self.click(data['by'], data['location'])
-            if 'input' == data['operation']:
+            if data['operation'] == 'get_kuwei':
+                text = self.find(data['by'], data['location']).text
+                list_1 = [text]
+            if data['operation'] == 'scan_code':
+                self.scan_code(data['odd'], list_1)
+                list_1.clear()
+            if data['operation'] == 'input':
                 self.input(data['by'], data['location'], data['input'])
-            if 'wait' == data['operation']:
-                if data['by'] == 'css':
-                    data['by'] = By.CSS_SELECTOR
-                elif data['by'] == 'xpath':
-                    data['by'] = By.XPATH
-                elif data['by'] == 'id':
-                    data['by'] = By.ID
-                elif data['by'] == 'class':
-                    data['by'] = By.CLASS_NAME
-                self.wait_for_click((data['by'], data['location']))
-            if 'sleep' == data['operation']:
-                # self.sleep(data['time'])
-                pass
-            # if "action" == data['operation']:
-            #     self.action().send_keys(Keys.F5)
-            if 'sliding' == data['operation']:
-                self.sliding(data['by'], data['location'])
+            if data['operation'] == 'click':
+                self.click(data['by'], data['location'])
+            if data['operation'] == 'sleep':
+                self.sleep(data['time'])
 
     # 模拟键盘操作
     # def action(self):
     #     return ActionChains(self.selfdriver)
     # action.send_keys(Keys.F5)
+
+    # pda扫码
+    def scan_code(self, odd, list=None):
+        # 连接联想模拟器
+        # os.system('adb connect 127.0.0.1:11509')
+        # 运行扫码
+        self.sleep(1)
+        if odd != '':
+            os.system('adb shell am broadcast -a my_broadcast_service -p %s --es scannerdata %s' % (page_name, odd))
+        else:
+            os.system('adb shell am broadcast -a my_broadcast_service -p %s --es scannerdata %s' % (page_name, list[0]))
 
     # 滑动到元素直至元素可见
     def sliding(self, key, value):

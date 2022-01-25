@@ -8,12 +8,12 @@ def handle_black(func):
     logging.basicConfig(level=logging.INFO)
 
     def wrapper(*args, **kwargs):
-        from ywzt.base.base_page import PageBase
+        from ywzt.base.base_page import BasePage
         _black_list = [(By.XPATH, '//*[@text="确认"]'),
                        (By.XPATH, '//*[@text="创建失败"]')]
         _max_num = 3
         _error_num = 0
-        instance: PageBase = args[0]
+        instance: BasePage = args[0]
         try:
             logging.info("run" + func.__name__ + "\n args:\n" + repr(args) + "\n kwargs:" + repr(kwargs))
             element = func(*args, **kwargs)

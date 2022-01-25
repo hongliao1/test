@@ -1,0 +1,11 @@
+dingcangguanli:
+  - operation: click
+    by: css
+    location: '#rantion-tms>section>aside>div>ul>li>ul > li:nth-child(1) > div'
+    txt: '点击订舱管理'
+
+wuliuguanli:
+  - operation: click
+    by: css
+    location: '#rantion-tms>section>aside>div>ul>li>ul > li:nth-child(2) > div'
+    txt: '点击物流管理'

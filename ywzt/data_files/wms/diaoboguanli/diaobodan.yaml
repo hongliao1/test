@@ -1,0 +1,452 @@
+# 创建自营调拨单(来源仓为工厂仓)
+create_ziying_diaobodan:
+  - operation: click
+    by: css
+    location: '.table-top>button'
+    txt: '点击创建调拨单'
+
+  - operation: click
+    by: css
+    location: '#app-wms > div:nth-child(2) > div > div > div > div> div> form > div > div:nth-child(1) > div > div > div > span > div > div > div'
+    txt: '点击渠道'
+
+  - operation: click
+    by: css
+    location: '#app-wms>div:nth-child(3)>div>div>div>ul>li:nth-child(${qudao})'
+    txt: '点击亚马逊'
+
+  - operation: click
+    by: css
+    location: '#allocationType > div > div.ant-col.ant-col-18.ant-form-item-control-wrapper > div > span > div > div > div'
+    txt: '点击调拨类型'
+
+  - operation: click
+    by: css
+    location: '#app-wms>div:nth-child(4)>div>div>div>ul>li'
+    txt: '选择调拨类型'
+
+  - operation: click
+    by: css
+    location: '#app-wms > div:nth-child(2) > div > div > div > div > div > form > div > div:nth-child(2) > div > div > div > span > div > div > div'
+    txt: '点击运输方式'
+
+  - operation: click
+    by: css
+    location: '#app-wms> div:nth-child(5)>div>div>div>ul>li:nth-child(${yunshufangsi})'
+    txt: '选择运输方式'
+
+  - operation: click
+    by: css
+    location: '#app-wms > div:nth-child(2) > div > div > div > div > div> form > div > div:nth-child(3) > div > div> div > span > div > div > div'
+    txt: '点击来源仓'
+
+  - operation: input
+    by: css
+    location: '#app-wms > div:nth-child(2) > div > div > div > div > div> form > div > div:nth-child(3) > div > div > div > span > div > div > div > div > div > input'
+    input: ${laiyuancang}
+    txt: '输入来源仓'
+
+  - operation: click
+    by: css
+    location: '#app-wms > div:nth-child(2) > div > div > div > div > div > form > div > div:nth-child(4) > div > div > div > span > div > div > div'
+    txt: '点击目的仓'
+
+  - operation: input
+    by: css
+    location: '#app-wms > div:nth-child(2) > div > div > div > div > div > form > div > div:nth-child(4) > div > div > div > span > div > div > div > div > div > input'
+    input: ${mudicang}
+    txt: '输入目的仓'
+
+  - operation: click
+    by: css
+    location: '#app-wms > div:nth-child(2) > div > div> div > div > div > form > div > div:nth-child(5) > div > div > div > span > div > div > div'
+    txt: '点击调出交易主体'
+
+  - operation: click
+    by: css
+    location: '#app-wms>div:nth-child(8)>div>div>div>ul>li:nth-child(${diaochuzhuti})'
+    txt: '选择调出交易主体'
+
+  - operation: click
+    by: css
+    location: '#app-wms > div:nth-child(2) > div > div> div > div > div > form > div > div:nth-child(6) > div > div > div > span > div > div > div'
+    txt: '点击调入交易主体'
+
+  - operation: click
+    by: css
+    location: '#app-wms>div:nth-child(9)>div>div>div>ul>li:nth-child(${diaoruzhuti})'
+    txt: '选择调入交易主体'
+
+  - operation: input
+    by: css
+    location: '#app-wms > div:nth-child(2) > div > div> div > div > div > form > div > div > div > div > div > span > span > span > input'
+    input: ${sku}
+    txt: '输入SKU'
+
+  - operation: action
+    key: 'enter'
+    txt: '按下enter键'
+
+  - operation: click
+    by: css
+    location: '#app-wms>div:nth-child(10)>div>div:nth-child(2)>div>div:nth-child(2)>div:nth-child(4)>div>button:nth-child(2)'
+    txt: '点击弹窗确定'
+
+  - operation: click
+    by: css
+    location: '#app-wms > div:nth-child(2) > div > div> div > div > div > div> div > div > div > div > div > table > tbody > tr > td:nth-child(4) > div > div>input'
+    txt: '点击数量框'
+
+  - operation: action
+    key: backspace
+    txt: '按下backspace键，删除原有数量'
+
+  - operation: action
+    key: backspace
+    txt: '按下backspace键，删除原有数量'
+
+  - operation: action
+    key: backspace
+    txt: '按下backspace键，删除原有数量'
+
+  - operation: action
+    key: backspace
+    txt: '按下backspace键，删除原有数量'
+
+  - operation: input
+    by: css
+    location: '#app-wms > div:nth-child(2) > div > div> div > div > div > div> div > div > div > div > div > table > tbody > tr > td:nth-child(4) > div > div > input'
+    input: ${num}
+    txt: '输入数量'
+
+  - operation: click
+    by: css
+    location: '#app-wms > div:nth-child(2) > div > div > div > div> div.ant-modal-body > form > div > div:nth-child(8) > div > div.ant-col.ant-col-18.ant-form-item-control-wrapper > div > span > textarea'
+    txt: '点击出现弹窗'
+
+  - operation: click
+    by: css
+    location: '#app-wms>div:nth-child(10)>div>div:nth-child(2)>div>div:nth-child(2)>div:nth-child(4)>div>button:nth-child(2)'
+    txt: '点击弹窗确定'
+
+  - operation: click
+    by: css
+    location: '#app-wms > div:nth-child(2) > div > div > div > div > div > div > button:nth-child(2)'
+    txt: '点击确定'
+
+  - operation: sleep
+    time: 1
+    txt: '等待1秒'
+
+  - operation: sliding
+    by: css
+    location: '#props-tags > main > div > div:nth-child(2) > div.ant-table-wrapper > div > div > div > div > div.ant-table-fixed-left > div.ant-table-body-outer > div > table > tbody > tr:nth-child(4) > td.ant-table-row-cell-break-word'
+
+  - operation: click
+    by: css
+    location: '#props-tags > main > div > div:nth-child(2) > div.ant-table-wrapper > div > div > div > div > div.ant-table-fixed-right > div.ant-table-body-outer > div > table > tbody > tr:nth-child(1) > td > div > div:nth-child(2) > a'
+    txt: '点击更多操作'
+
+  - operation: sliding
+    by: css
+    location: '#props-tags > main > div > div.fenye > ul > li.ant-pagination-item.ant-pagination-item-1.ant-pagination-item-active'
+    txt: '滑动到底部'
+
+  - operation: click
+    by: css
+    location: '#app-wms > div:nth-child(3) > div > div > ul > li:nth-child(7) > button'
+    txt: '点击生成拣货单'
+# 获取入库单号
+get_pd_odd:
+  - operation: click
+    by: css
+    location: '#props-tags > main > div > div:nth-child(1) > div.top-search-from > div:nth-child(3) > form > div > div:nth-child(4) > div > div > div > span > a'
+    txt: '点击更多'
+
+  - operation: click
+    by: css
+    location: '#props-tags > main > div > div:nth-child(1) > div.top-search-from > div:nth-child(3) > form > div > div:nth-child(5) > div > div.ant-col.ant-col-16.ant-form-item-control-wrapper > div > span > div > div'
+    txt: '点击来源仓'
+
+  - operation: input
+    by: css
+    location: '#props-tags > main > div > div:nth-child(1) > div.top-search-from > div:nth-child(3) > form > div > div:nth-child(5) > div > div.ant-col.ant-col-16.ant-form-item-control-wrapper > div > span > div > div > div > div.ant-select-search.ant-select-search--inline > div > input'
+    input: ${laiyuancang}
+    txt: '输入来源仓'
+
+  - operation: click
+    by: css
+    location: '#props-tags > main > div > div:nth-child(1) > div.top-search-from > div:nth-child(3) > form > div > div:nth-child(6) > div > div.ant-col.ant-col-16.ant-form-item-control-wrapper > div > span > div > div > div'
+    txt: '点击目的仓'
+
+  - operation: input
+    by: css
+    location: '#props-tags > main > div > div:nth-child(1) > div.top-search-from > div:nth-child(3) > form > div > div:nth-child(6) > div > div.ant-col.ant-col-16.ant-form-item-control-wrapper > div > span > div > div > div > div.ant-select-search.ant-select-search--inline > div > input'
+    input: ${mudicang}
+    txt: '输入来源仓'
+
+  - operation: click
+    by: css
+    location: '#props-tags > main > div > div:nth-child(1) > div.top-search-from > div:nth-child(3) > form > div > div:nth-child(16) > div > div > div > span > button.ant-btn.ant-btn-primary'
+    txt: ' 点击查询'
+
+  - operation: sleep
+    time: 1
+    txt: '等待1秒'
+
+  - operation: get_odd
+    by: css
+    location: '#props-tags > main > div > div:nth-child(2) > div.ant-table-wrapper > div > div > div > div > div.ant-table-fixed-left > div.ant-table-body-outer > div > table > tbody > tr:nth-child(1) > td.ant-table-row-cell-break-word'
+    txt: '获取调拨单号'
+
+  - operation: sliding
+    by: css
+    location: '#props-tags > main > div > div:nth-child(2) > div.ant-table-wrapper > div > div > div > div > div.ant-table-fixed-left > div.ant-table-body-outer > div > table > tbody > tr:nth-child(4) > td.ant-table-row-cell-break-word'
+    txt: '滑动'
+
+  - operation: sliding
+    by: css
+    location: '#props-tags > main > div > div:nth-child(2) > div.ant-table-wrapper > div > div > div > div > div.ant-table-scroll > div.ant-table-body > table > tbody > tr:nth-child(5) > td:nth-child(24)'
+
+  - operation: sleep
+    time: 1
+    txt: '等待1秒'
+
+#  - operation: click
+#    by: css
+#    location: '#props-tags > main > div > div:nth-child(2) > div.ant-table-wrapper > div > div > div > div > div.ant-table-scroll > div.ant-table-body > table > tbody > tr:nth-child(1) > td:nth-child(20)'
+#    txt: '点击拣货单号'
+
+  - operation: get_odd
+    by: css
+    location: '#props-tags > main > div > div:nth-child(2) > div.ant-table-wrapper > div > div > div > div > div.ant-table-scroll > div.ant-table-body > table > tbody > tr:nth-child(1) > td:nth-child(20)'
+    txt: '获取拣货单号'
+
+# 调拨单点击绑定订舱需求
+click_fayun:
+  - operation: input
+    by: css
+    location: "#props-tags > main > div > div:nth-child(1) > div.top-search-from > div:nth-child(3) > form > div > div:nth-child(1) > div > div.ant-col.ant-col-16.ant-form-item-control-wrapper > div > span > span > input"
+    input: ${odd1}
+    txt: '输入调拨单号'
+
+  - operation: click
+    by: css
+    location: '#props-tags > main > div > div:nth-child(1) > div.top-search-from > div:nth-child(3) > form > div > div:nth-child(4) > div > div > div > span > button.ant-btn.ant-btn-primary'
+    txt: ' 点击查询'
+
+  - operation: sleep
+    time: 1
+    txt: '等1秒'
+
+  - operation: click
+    by: css
+    location: '#props-tags > main > div > div:nth-child(2) > div.ant-table-wrapper > div > div > div > div > div.ant-table-fixed-left > div.ant-table-header.ant-table-hide-scrollbar > table > thead > tr > th.ant-table-selection-column.ant-table-selection-column-custom > span > div > span.ant-table-column-title > div > label > span'
+    txt: '勾选'
+
+  - operation: click
+    by: css
+    location: '#props-tags > main > div > div:nth-child(2) > div.table-top > button:nth-child(2)'
+    txt: '点击绑定订舱需求'
+
+  - operation: click
+    by: css
+    location: 'body > div:nth-child(8) > div > div.ant-modal-wrap > div > div.ant-modal-content > div > div > div.ant-modal-confirm-btns > button.ant-btn.ant-btn-primary'
+    txt: '点击确定'
+
+create_dingcang:
+  - operation: click
+    by: css
+    location: '#props-tags > main > div > div:nth-child(3) > div.ant-table-wrapper.r-table > div > div > div > div > div > div.ant-table-body > table > tbody > tr:nth-child(1) > td.ant-table-selection-column.ant-table-cell-fix-left > span > label > span '
+    txt: '勾选'
+
+  - operation: click
+    by: css
+    location: '#props-tags > main > div > div:nth-child(3) > div.table-top > div:nth-child(1) > button:nth-child(1) > span:nth-child(2)'
+    txt: '点击创建订舱'
+
+dingcang_case:
+#  - operation: click
+#    by: css
+#    location: '#props-tags > main > div > div.top-search-from-nowidth.top-search-from > div.order-status > div > div:nth-child(2)'
+#    txt: '点击待订舱'
+
+  - operation: click
+    by: css
+    location: '#props-tags > main > div > div:nth-child(3) > div.ant-table-wrapper.r-table > div > div > div > div > div > div.ant-table-body > table > tbody > tr:nth-child(1) > td:nth-child(2) > div > div:nth-child(3) > a'
+    txt: '点击审批'
+
+  - operation: click
+    by: css
+    location: '#latestLoadCabinTime > div > input'
+    txt: '点击最晚送仓日期'
+
+  - operation: click
+    by: css
+    location: '#rantion-tms > div:nth-child(3) > div > div > div > div > div.ant-calendar-date-panel > div.ant-calendar-footer > span > a'
+    txt: '选择今天'
+
+  - operation: click
+    by: css
+    location: '#endBillTime > div > input'
+    txt: '点击截单日期'
+
+  - operation: click
+    by: css
+    location: '#rantion-tms > div:nth-child(4) > div > div > div > div > div.ant-calendar-date-panel > div.ant-calendar-footer > span > a'
+    txt: '选择今天'
+
+  - operation: input
+    by: css
+    location: '#waybillNo'
+    input: ${odd1}
+    txt: '输入物流单号'
+
+  - operation: click
+    by: css
+    location: '#etdTime > div > input'
+    txt: '点击ETD'
+
+  - operation: click
+    by: css
+    location: '#rantion-tms > div:nth-child(5) > div > div > div > div > div.ant-calendar-date-panel > div.ant-calendar-footer > span > a'
+    txt: '选择今天'
+
+  - operation: click
+    by: css
+    location: '#etaTime > div > input'
+    txt: '点击ETA'
+
+  - operation: click
+    by: css
+    location: '#rantion-tms > div:nth-child(6) > div > div > div > div > div.ant-calendar-date-panel > div.ant-calendar-footer > span > a'
+    txt: '选择今天日期'
+
+  - operation: click
+    by: css
+    location: '#rantion-tms > div:nth-child(2) > div > div.ant-modal-wrap.ant-modal-centered > div > div.ant-modal-content > div.ant-modal-body > div.ant-collapse.ant-collapse-icon-position-left > div.ant-collapse-item.ant-collapse-item-active > div.ant-collapse-content.ant-collapse-content-active > div > form > div.ant-row > div:nth-child(6) > div > div.ant-col.ant-col-14.ant-form-item-control > div > div > div > div'
+    txt: '点击起运港'
+
+  - operation: click
+    by: css
+    location: '#rantion-tms > div:nth-child(7) > div > div > div > div.rc-virtual-list > div.rc-virtual-list-holder > div > div>div:nth-child(3)'
+    txt: '选择起运港'
+
+  - operation: click
+    by: css
+    location: '#rantion-tms > div:nth-child(2) > div > div.ant-modal-wrap.ant-modal-centered > div > div.ant-modal-content > div.ant-modal-body > div.ant-collapse.ant-collapse-icon-position-left > div.ant-collapse-item.ant-collapse-item-active > div.ant-collapse-content.ant-collapse-content-active > div > form > div.ant-row > div:nth-child(8) > div > div.ant-col.ant-col-14.ant-form-item-control > div > div > span > span.ant-cascader-picker-label'
+    txt: '点击渠道'
+
+  - operation: click
+    by: css
+    location: '#rantion-tms > div:nth-child(8) > div > div > div > ul > li:nth-child(1)'
+
+  - operation: click
+    by: css
+    location: '#rantion-tms > div:nth-child(8) > div > div > div > ul:nth-child(2) > li:nth-child(1)'
+    txt: '选择渠道'
+
+  - operation: click
+    by: css
+    location: '#rantion-tms > div:nth-child(2) > div > div.ant-modal-wrap.ant-modal-centered > div > div.ant-modal-content > div.ant-modal-footer > button.ant-btn.ant-btn-primary > span'
+    txt: '点击提交'
+
+  - operation: sleep
+    time: 1
+    txt: '等待1秒'
+
+  - operation: sliding
+    by: css
+    location: '#props-tags > main > div > div:nth-child(3) > div > div > div > div > div > div > div > table > tbody > tr > td:nth-child(2)'
+    txt: '滑动'
+
+  - operation: sliding
+    by: css
+    location: '#props-tags > main > div > div > div > div > div'
+    txt: '滑动'
+
+  - operation: click
+    by: css
+    location: '#props-tags > main > div > div:nth-child(3) > div > div > div > div > div > div > div > table > tbody > tr > td:nth-child(2) > div > div:nth-child(3) > a'
+    txt: '点击审批'
+
+  - operation: click
+    by: css
+    location: '#confirmLoadCabinTime > div > input'
+    txt: '点击确认到仓时间'
+
+  - operation: click
+    by: css
+    location: '#rantion-tms > div:nth-child(9) > div > div > div > div > div.ant-calendar-date-panel > div.ant-calendar-footer > span > a'
+    txt: '选择今天'
+
+  - operation: click
+    by: css
+    location: '#rantion-tms > div:nth-child(2) > div > div.ant-modal-wrap.ant-modal-centered > div > div.ant-modal-content > div.ant-modal-footer > button.ant-btn.ant-btn-primary > span'
+    txt: '点击提交'
+
+  - operation: sleep
+    time: 1
+    txt: '等待1秒'
+
+  - operation: sliding
+    by: css
+    location: '#props-tags > main > div > div:nth-child(3) > div > div > div > div > div > div > div > table > tbody > tr > td:nth-child(2)'
+    txt: '滑动'
+
+  - operation: sliding
+    by: css
+    location: '#props-tags > main > div > div > div > div > div'
+    txt: '滑动'
+
+  - operation: click
+    by: css
+    location: '#props-tags > main > div > div:nth-child(3) > div > div > div > div > div > div > div > table > tbody > tr:nth-child(1) > td > span > label > span'
+    txt: '勾选'
+
+  - operation: click
+    by: css
+    location: '#props-tags > main > div > div:nth-child(3) > div.table-top > div:nth-child(1) > button:nth-child(1) > span:nth-child(2)'
+    txt: '点击生成TMS单号'
+
+#  - operation: click
+#    by: css
+#    location: '#props-tags > main > div > div.top-search-from-nowidth.top-search-from > div:nth-child(2) > form > div > div:nth-child(4) > div > div > div > div > button.ant-btn.ant-btn-primary > span'
+#    txt: '点击查询，用于刷新页面显示TMS单号'
+dingcang_get_odd:
+  - operation: get_odd
+    by: css
+    location: '#props-tags > main > div > div:nth-child(3) > div.ant-table-wrapper.r-table > div > div > div > div > div > div.ant-table-body > table > tbody > tr:nth-child(1) > td:nth-child(4)'
+    txt: '获取TMS单号'
+
+diaobopici_get_odd:
+  - operation: click
+    by: css
+    location: '#props-tags > main > div > div:nth-child(1) > div.top-search-from > div:nth-child(2) > form > div > div:nth-child(4) > div > div > div > span > a'
+    txt: '点击更多'
+
+  - operation: input
+    by: css
+    location: '#props-tags > main > div > div:nth-child(1) > div.top-search-from > div:nth-child(2) > form > div > div:nth-child(7) > div > div.ant-col.ant-col-16.ant-form-item-control-wrapper > div > span > span > input'
+    input: ${odd1}
+    txt: '输入tms单号'
+
+  - operation: click
+    by: css
+    location: '#props-tags > main > div > div:nth-child(1) > div.top-search-from > div:nth-child(2) > form > div > div:nth-child(11) > div > div > div > span > button.ant-btn.ant-btn-primary'
+    txt: '点击查询'
+
+  - operation: get_odd
+    by: css
+    location: '#props-tags > main > div > div.ant-table-wrapper > div > div > div > div > div.ant-table-fixed-left > div.ant-table-body-outer > div > table > tbody > tr > td:nth-child(2)'
+    txt: '获取批次号'
+
+  - operation: click
+    by: css
+    location: '#props-tags > main > div > div.ant-table-wrapper > div > div > div > div > div.ant-table-fixed-right > div.ant-table-body-outer > div > table > tbody > tr > td > div > div:nth-child(1) > button'
+    txt: '点击查看明细'
+
+  - operation: get_odd
+    by: css
+    location: '#app-wms > div > div > div.ant-modal-wrap > div > div.ant-modal-content > div.ant-modal-body > div.ant-table-wrapper > div > div > div > div > div > table > tbody > tr > td:nth-child(1)'
+    txt: '获取to单号'

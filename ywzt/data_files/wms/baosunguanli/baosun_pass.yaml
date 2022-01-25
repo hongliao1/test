@@ -1,7 +1,13 @@
 kuwei_baosun:
+  - operation: wait
+    by: css
+    location: '#props-tags > main > div > div.a-table-column > div > div > div > div > div > div > div > div > div.ant-table-body > table > tbody > tr:nth-child(1) > td:nth-child(13) > button'
+    txt: '等待报损按钮可被点击'
+
   - operation: click
     by: xpath
     location: '//*[@id="props-tags"]//form/div/div[1]/div/div[2]/div/span/div/div/div'
+    txt: "点击仓库"
 
   - operation: input
     by: css
@@ -9,6 +15,7 @@ kuwei_baosun:
                 div:nth-child(1) > div > div.ant-col.ant-col-16.ant-form-item-control-wrapper > div > span
                 > div > div > div > div.ant-select-search.ant-select-search--inline > div > input'
     input: ${cangku}
+    txt: "输入仓库"
 
   - operation: input
     by: css
@@ -16,35 +23,42 @@ kuwei_baosun:
                 div:nth-child(3) > div > div.ant-col.ant-col-16.ant-form-item-control-wrapper > div > span
                 > span > input'
     input: ${sku}
+    txt: "输入SKU"
 
   - operation: sleep
     time: 0.5
+    txt: '等待0.5秒'
 
   - operation: click
     by: xpath
     location: '//*[@id="props-tags"]/main/div/div[1]/div[1]/div/form/div/div[
                 4]/div/div/div/span/button[1]'
+    txt: "点击查询"
 
   - operation: sleep
-    time: 1
+    time: 0.5
+    txt: "等待0.5秒"
 
   - operation: click
     by: css
-    location: '#props-tags > main > div > div> div > div > div > div > div > div > div >
-                div > div> table > tbody > tr:nth-child(1) > td:nth-child(13) > button'
+    location: '#props-tags > main > div > div.a-table-column > div > div > div > div > div > div > div > div > div.ant-table-body > table > tbody > tr > td:nth-child(13) > button'
+    txt: "点击报损"
 
   - operation: sleep
-    time: 1
+    time: 0.5
+    txt: "等待0.5秒"
 
   - operation: input
     by: css
     location: '.ant-modal-content>div:nth-child(3)>form>div:nth-child(5)>div:nth-child(2)>div>span>textarea'
     input: ${liyou}
+    txt: "输入理由"
 
   - operation: click
     by: css
     location: '.ant-modal-content>div:nth-child(3)>form>div:nth-child(4)>div:nth-child(
                 2)>div>span>div>div>div>div>div>div>table>tbody:nth-child(3)>tr>td>span>label>span'
+    txt: "勾选SKU"
 
   - operation: input
     by: css
@@ -52,10 +66,12 @@ kuwei_baosun:
                 2)>div>span>div>div>div>div>div>div>table>tbody:nth-child(3)>tr>td:nth-last-child(
                 1)>span>div>div:nth-child(2)>input'
     input: ${num}
+    txt: "输入报损数量"
 
   - operation: click
     by: css
     location: '.ant-modal-content>div:nth-child(3)>div>button:nth-child(2)'
+    txt: "点击确定"
 
 
 shenhe_tongguo:
@@ -64,18 +80,21 @@ shenhe_tongguo:
     operation: click
     by: css
     location: '#props-tags>main>div>div>div>div>div>label:nth-child(2)>span:nth-child(2)'
+    txt: "点击待审核状态"
   #  input:
   -
     #点击仓库筛选框
     operation: click
     by: css
     location: "#props-tags>main>div>div>div>div:nth-child(2)>form>div>div>div>div:nth-child(2)>div>span>div>div>div"
+    txt: "点击仓库筛选框"
   -
     #输入仓库
     operation: input
     by: css
     location: '#props-tags>main>div>div>div>div:nth-child(2)>form>div>div>div>div:nth-child(2)>div>span>div>div>div>div:nth-child(2)>div>input'
     input: ${cangku}
+    txt: "输入仓库"
 
   -
     #输入创建人
@@ -83,28 +102,34 @@ shenhe_tongguo:
     by: css
     location: '#props-tags>main>div>div>div>div:nth-child(2)>form>div>div:nth-child(3)>div>div:nth-child(2)>div>span>span>input'
     input: ${creator}
+    txt: "输入创建人"
   -
     #点击查询
     operation: click
     by: css
     location: '#props-tags>main>div>div>div>div:nth-child(2)>form>div>div:nth-child(4)>div>div>div>span>button'
+    txt: "点击查询"
   -
     operation: sleep
     time: 1
+    txt: ""
 #  -
 #    #等待勾选框元素出现
 #    operation: wait
 #    by: css
 #    location: '#props-tags>main>div>div:nth-child(3)>div>div>div>div>div>div:nth-child(2)>table>tbody>tr>td input'
+#    txt: ""
   -
     #点击审批
     operation: click
     by: css
     location: '#props-tags>main>div>div:nth-child(3)>div>div>div>div>div>div:nth-child(2)>table>tbody>tr:nth-child(1)>td:nth-child(2)>div>div:nth-child(2)>a'
+    txt: "点击审核"
   -
     #等一秒
     operation: sleep
     time: 1
+    txt: ""
   -
     # 输入处理意见
     operation: input
@@ -113,125 +138,146 @@ shenhe_tongguo:
     div.ant-modal-body > div.top-search-from > form:nth-child(2) > div > div:nth-child(2) >
     div.ant-row.ant-form-item > div.ant-col.ant-col-19.ant-form-item-control-wrapper > div > span > textarea'
     input: ${yijian1}
+    txt: "输入处理意见1"
   -
     #点击审批通过
     operation: click
     by: css
     location: '#app-wms > div:nth-child(3) > div > div.ant-modal-wrap > div > div.ant-modal-content > div.ant-modal-body > div.table-footer > button.ant-btn.ant-btn-primary'
+    txt: "点击审核通过"
   -
     #等一秒
     operation: sleep
     time: 1
+    txt: ""
   -
     #滑动到元素可见
     operation: sliding
     by: css
     location: "#props-tags>main>div>div>div>div:nth-child(2)>form>div>div>div>div:nth-child(2)>div>span>div>div>div"
+    txt: ""
 
   -
     #点击审批
     operation: click
     by: css
     location: '#props-tags>main>div>div:nth-child(3)>div>div>div>div>div>div:nth-child(2)>table>tbody>tr:nth-child(1)>td:nth-child(2)>div>div:nth-child(2)>a'
+    txt: "点击审核"
   -
     #等一秒
     operation: sleep
     time: 1
+    txt: ""
   -
     # 输入处理意见
     operation: input
     by: css
     location: '#app-wms > div:nth-child(3) > div > div.ant-modal-wrap > div > div.ant-modal-content > div.ant-modal-body > div.top-search-from > form:nth-child(2) > div > div:nth-child(2) > div.ant-row.ant-form-item > div.ant-col.ant-col-19.ant-form-item-control-wrapper > div > span > textarea'
     input: ${yijian2}
+    txt: "输入处理意见2"
   -
     #点击审批通过
     operation: click
     by: css
     location: '#app-wms > div:nth-child(3) > div > div.ant-modal-wrap > div > div.ant-modal-content > div.ant-modal-body > div.table-footer > button.ant-btn.ant-btn-primary'
+    txt: "点击审批通过"
   -
     #等一秒
     operation: sleep
     time: 1
+    txt: ""
   -
     #滑动到元素可见
     operation: sliding
     by: css
     location: "#props-tags>main>div>div>div>div:nth-child(2)>form>div>div>div>div:nth-child(2)>div>span>div>div>div"
+    txt: ""
   -
     #点击审批
     operation: click
     by: css
     location: '#props-tags>main>div>div:nth-child(3)>div>div>div>div>div>div:nth-child(2)>table>tbody>tr:nth-child(1)>td:nth-child(2)>div>div:nth-child(2)>a'
+    txt: "点击审批"
   -
     #等一秒
     operation: sleep
     time: 1
+    txt: ""
   -
     # 输入处理意见
     operation: input
     by: css
     location: '#app-wms > div:nth-child(3) > div > div.ant-modal-wrap > div > div.ant-modal-content > div.ant-modal-body > div.top-search-from > form:nth-child(2) > div > div:nth-child(2) > div.ant-row.ant-form-item > div.ant-col.ant-col-19.ant-form-item-control-wrapper > div > span > textarea'
     input: ${yijian3}
+    txt: "输入处理意见3"
   -
     #点击审批通过
     operation: click
     by: css
     location: '#app-wms > div:nth-child(3) > div > div.ant-modal-wrap > div > div.ant-modal-content > div.ant-modal-body > div.table-footer > button.ant-btn.ant-btn-primary'
+    txt: "点击审批通过"
   -
     #等一秒
     operation: sleep
     time: 1
+    txt: ""
   -
     #滑动到元素可见
     operation: sliding
     by: css
     location: "#props-tags>main>div>div>div>div:nth-child(2)>form>div>div>div>div:nth-child(2)>div>span>div>div>div"
-  -
-    #点击审批
-    operation: click
-    by: css
-    location: '#props-tags>main>div>div:nth-child(3)>div>div>div>div>div>div:nth-child(2)>table>tbody>tr:nth-child(1)>td:nth-child(2)>div>div:nth-child(2)>a'
-  -
-    #等一秒
-    operation: sleep
-    time: 1
-  -
-    # 输入处理意见
-    operation: input
-    by: css
-    location: '#app-wms > div:nth-child(3) > div > div.ant-modal-wrap > div > div.ant-modal-content > div.ant-modal-body > div.top-search-from > form:nth-child(2) > div > div:nth-child(2) > div.ant-row.ant-form-item > div.ant-col.ant-col-19.ant-form-item-control-wrapper > div > span > textarea'
-    input: ${yijian4}
-  -
-    #点击审批通过
-    operation: click
-    by: css
-    location: '#app-wms > div:nth-child(3) > div > div.ant-modal-wrap > div > div.ant-modal-content > div.ant-modal-body > div.table-footer > button.ant-btn.ant-btn-primary'
-  -
-    #等一秒
-    operation: sleep
-    time: 1
-  -
-    #滑动到元素可见
-    operation: sliding
-    by: css
-    location: "#props-tags>main>div>div>div>div:nth-child(2)>form>div>div>div>div:nth-child(2)>div>span>div>div>div"
-  -
-    #点击审批
-    operation: click
-    by: css
-    location: '#props-tags>main>div>div:nth-child(3)>div>div>div>div>div>div:nth-child(2)>table>tbody>tr:nth-child(1)>td:nth-child(2)>div>div:nth-child(2)>a'
-  -
-    #等一秒
-    operation: sleep
-    time: 1
-  -
-    # 输入处理意见
-    operation: input
-    by: css
-    location: '#app-wms > div:nth-child(3) > div > div.ant-modal-wrap > div > div.ant-modal-content > div.ant-modal-body > div.top-search-from > form:nth-child(2) > div > div:nth-child(2) > div.ant-row.ant-form-item > div.ant-col.ant-col-19.ant-form-item-control-wrapper > div > span > textarea'
-    input: ${yijian5}
-  -
-    #点击审批通过
-    operation: click
-    by: css
-    location: '#app-wms > div:nth-child(3) > div > div.ant-modal-wrap > div > div.ant-modal-content > div.ant-modal-body > div.table-footer > button.ant-btn.ant-btn-primary'
+    txt: ""
+#  -
+#    #点击审批
+#    operation: click
+#    by: css
+#    location: '#props-tags>main>div>div:nth-child(3)>div>div>div>div>div>div:nth-child(2)>table>tbody>tr:nth-child(1)>td:nth-child(2)>div>div:nth-child(2)>a'
+#    txt: "点击审批"
+#  -
+#    #等一秒
+#    operation: sleep
+#    time: 1
+#    txt: ""
+#  -
+#    # 输入处理意见
+#    operation: input
+#    by: css
+#    location: '#app-wms > div:nth-child(3) > div > div.ant-modal-wrap > div > div.ant-modal-content > div.ant-modal-body > div.top-search-from > form:nth-child(2) > div > div:nth-child(2) > div.ant-row.ant-form-item > div.ant-col.ant-col-19.ant-form-item-control-wrapper > div > span > textarea'
+#    input: ${yijian4}
+#    txt: "输入处理意见4"
+#  -
+#    #点击审批通过
+#    operation: click
+#    by: css
+#    location: '#app-wms > div:nth-child(3) > div > div.ant-modal-wrap > div > div.ant-modal-content > div.ant-modal-body > div.table-footer > button.ant-btn.ant-btn-primary'
+#    txt: "点击审批通过"
+#  -
+#    #等一秒
+#    operation: sleep
+#    time: 1
+#    txt: ""
+#  -
+#    #滑动到元素可见
+#    operation: sliding
+#    by: css
+#    location: "#props-tags>main>div>div>div>div:nth-child(2)>form>div>div>div>div:nth-child(2)>div>span>div>div>div"
+#  -
+#    #点击审批
+#    operation: click
+#    by: css
+#    location: '#props-tags>main>div>div:nth-child(3)>div>div>div>div>div>div:nth-child(2)>table>tbody>tr:nth-child(1)>td:nth-child(2)>div>div:nth-child(2)>a'
+#  -
+#    #等一秒
+#    operation: sleep
+#    time: 1
+#  -
+#    # 输入处理意见
+#    operation: input
+#    by: css
+#    location: '#app-wms > div:nth-child(3) > div > div.ant-modal-wrap > div > div.ant-modal-content > div.ant-modal-body > div.top-search-from > form:nth-child(2) > div > div:nth-child(2) > div.ant-row.ant-form-item > div.ant-col.ant-col-19.ant-form-item-control-wrapper > div > span > textarea'
+#    input: ${yijian5}
+#  -
+#    #点击审批通过
+#    operation: click
+#    by: css
+#    location: '#app-wms > div:nth-child(3) > div > div.ant-modal-wrap > div > div.ant-modal-content > div.ant-modal-body > div.table-footer > button.ant-btn.ant-btn-primary'

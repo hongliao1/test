@@ -1,6 +1,7 @@
 # from ywzt.config.get_path import GetPath
 
 driver_type = 'chrome'
+# driver_type = 'Firefox'
 base_url = 'http://erp-test.rantion.com/login/'
 username = '廖宏'
 password = '000000'
@@ -21,4 +22,4 @@ uat_passwd = 'Ran@tion2021#2'
 uat_db = 'rantion_stock'
 
 # sql与语句
-sql = 'select use_qty from stock_sku where sku="EB0110" and warehouse_name="美西仓"'
+sql = 'select sum(use_qty) from stock_sku where warehouse_name= "美西仓" and sku="EB0110"'

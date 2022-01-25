@@ -1,0 +1,23 @@
+diaobodan:
+  - operation: click
+    by: css
+    location: '#app-wms>section>aside>div>ul>li:nth-child(4)>ul>li:nth-child(1)>a'
+    txt: '点击调拨单'
+
+diaobopici:
+  - operation: click
+    by: css
+    location: '#app-wms>section>aside>div>ul>li:nth-child(4)>ul>li:nth-child(2)>a'
+    txt: '点击调拨批次'
+
+diaobolishi:
+  - operation: click
+    by: css
+    location: '#app-wms>section>aside>div>ul>li:nth-child(4)>ul>li:nth-child(3)>a'
+    txt: '点击调拨历史'
+
+zancunquguanli:
+  - operation: click
+    by: css
+    location: '#app-wms>section>aside>div>ul>li:nth-child(4)>ul>li:nth-child(4)>a'
+    txt: '点击暂存区管理'

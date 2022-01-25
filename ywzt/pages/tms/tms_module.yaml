@@ -1,0 +1,11 @@
+tob_wuliu:
+  - operation: click
+    by: css
+    location: '#rantion-tms>section>aside>div>ul>li:nth-child(1)>div > span'
+    txt: '点击TOB物流'
+
+toc_wuliu:
+  - operation: click
+    by: css
+    location: '#rantion-tms>section>aside>div>ul>li>ul > li:nth-child(2) > div'
+    txt: '点击TOC物流'

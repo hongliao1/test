@@ -20,6 +20,18 @@ from ywzt.handle_black import handle_black
 from ywzt.config.config import driver_type
 
 
+# 无页面运行
+# def browser(value):
+#     opt = webdriver.ChromeOptions()  # 创建Chrome参数对象
+#     opt.headless = True     # 把Chrome设置成可视化无界面模式，windows/Linux 皆可
+#     try:
+#         return getattr(webdriver, value)(options=opt)
+#     except Exception as i:
+#         print(i)
+#         # webdriver.Firefox
+#         return webdriver.Chrome(options=opt)
+
+#     有页面运行
 def browser(value):
     try:
         return getattr(webdriver, value)()
@@ -31,7 +43,7 @@ def browser(value):
 
 class BasePage(object):
     url = ''
-    case_path = ''
+    # case_path = ''
     data_path = ''
 
     def __init__(self, driver: WebDriver = None):
@@ -102,7 +114,7 @@ class BasePage(object):
     def wait_for_click(self, key, time=10):
         WebDriverWait(self.driver, time).until(expected_conditions.element_to_be_clickable(key))
 
-    def yaml_operation(self, case_path, *args):
+    def yaml_operation(self, case_path, data_path='', *args):
         with open(case_path, encoding='utf-8') as f:
             # 获取调用yaml文件的函数【0】表示第一层：class名，【1】表示第二层逐级类推。
             name = inspect.stack()[1].function
@@ -110,7 +122,7 @@ class BasePage(object):
         # 将读取的yaml（字典形式）转成json格式（字符串）
         raw = json.dumps(location)
         # 读取配置文件
-        data: dict = ReadYaml().readyaml(self.data_path, args)
+        data: dict = ReadYaml().readyaml(data_path, args)
         # 遍历配置文件中的值
         for by, value in data.items():
             # 替换值。固定格式。前面带f的两个{}才相当于一个{}

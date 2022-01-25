@@ -99,3 +99,41 @@ diaobo_jianhuo:
   - operation: click
     by: xpath
     location: '//*[@text="确认分箱信息"]'
+
+diaobo_pici_fayun:
+  - operation: click
+    by: xpath
+    location: '//*[@text="批次扫描"]'
+
+  - operation: scan_code
+    odd: ${odd1}
+
+  - operation: scan_code
+    odd: ${odd2}
+
+  - operation: click
+    by: xpath
+    location: '//*[@text="绑定"]'
+
+  - operation: click
+    by: xpath
+    location: '//*[@text="确定"]'
+
+  - operation: click
+    by: xpath
+    location: '//*[@text="转运扫描"]'
+
+  - operation: scan_code
+    odd: ${odd1}
+
+  - operation: click
+    by: xpath
+    location: '//*[@text="确认发运"]'
+
+  - operation: click
+    by: xpath
+    location: '//*[@text="确认发运"]'
+
+  - operation: click
+    by: xpath
+    location: '//*[@text="确定"]'

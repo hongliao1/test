@@ -3,7 +3,7 @@ import yaml
 
 class ReadYaml:
     def readyaml(self, data_path, args):
-        if data_path is '':
+        if data_path == '':
             return {}
         with open(data_path, encoding='utf-8') as f:
             data_1: dict = yaml.safe_load(f)

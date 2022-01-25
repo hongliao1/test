@@ -7,4 +7,4 @@ class BaoSunCase(BasePage):
     data_path = r'E:\job\test\ywzt\data_files\wms\baosunguanli\baosun_data.yaml'
 
     def shenhe_tongguo(self):
-        self.yaml_operation(self.path)
+        self.yaml_operation(self.path, self.data_path)

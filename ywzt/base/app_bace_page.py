@@ -10,10 +10,11 @@ from appium.webdriver.common.mobileby import MobileBy
 from selenium.webdriver.remote.webdriver import WebDriver
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
+
+from ywzt.app_config.app_handle_black import app_handle_black
 from ywzt.app_config.app_config import page_name
 
 from ywzt.base.read_yaml import ReadYaml
-from ywzt.handle_black import handle_black
 
 
 class AppBace():
@@ -27,7 +28,8 @@ class AppBace():
                         'noReset': True,
                         'donotStopAppOnReset': True,
                         'appActivity': 'com.rantion.ns_pda.ui.main.activity.WelcomActivity',
-                        'automationName': 'uiautomator2'}
+                        'automationName': 'uiautomator2'
+                        }
         if driver is None:
             self.driver = webdriver.Remote('http://127.0.0.1:4723/wd/hub', desired_caps)
         else:
@@ -56,18 +58,22 @@ class AppBace():
         else:
             return '定位方法错误'
 
+    @app_handle_black
     def find(self, key, value: str = None):
-        if isinstance(key, tuple):
-            return self.driver.find_element(*key)
-        else:
-            self.sleep(0.1)
-            self.wait_for_click((self.element(key), value))
-            return self.driver.find_element(self.element(key), value)
-
-    @handle_black
-    def finds(self, key, value: str = None):
         try:
-            self.sleep(0.2)
+            if isinstance(key, tuple):
+                return self.driver.find_element(*key)
+            else:
+                self.wait_for_click((self.element(key), value))
+                return self.driver.find_element(self.element(key), value)
+        except Exception as f:
+            print('查找元素失败：%s' % f)
+            return None
+
+    def finds(self, key, value: str = None):
+        self.sleep(0.5)
+        try:
+            # self.sleep(0.2)
             self.wait_for_click((self.element(key), value))
             return self.driver.find_elements(self.element(key), value)
         except Exception as f:
@@ -119,8 +125,9 @@ class AppBace():
     # pda扫码
     def scan_code(self, odd, list=None):
         # 连接联想模拟器
-        os.system('adb connect 127.0.0.1:11509')
+        # os.system('adb connect 127.0.0.1:11509')
         # 运行扫码
+        self.sleep(1)
         if odd != '':
             os.system('adb shell am broadcast -a my_broadcast_service -p %s --es scannerdata %s' % (page_name, odd))
         else:

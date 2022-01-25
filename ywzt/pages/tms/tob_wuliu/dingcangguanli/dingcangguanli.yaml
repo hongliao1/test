@@ -1,0 +1,11 @@
+gongcangzhenggui:
+  - operation: click
+    by: css
+    location: '#rantion-tms>section>aside>div>ul>li>ul>li>ul>li:nth-child(1)>div>span'
+    txt: '点击工厂整柜'
+
+ziyingsanhuo:
+  - operation: click
+    by: css
+    location: '#rantion-tms>section>aside>div>ul>li>ul>li>ul>li:nth-child(4)>div>span'
+    txt: '点击自营散货'

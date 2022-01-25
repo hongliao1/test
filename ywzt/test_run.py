@@ -55,13 +55,30 @@ class Testrun:
         self.login.quit()
 
     def test_diaobodan(self):
-        self.login.wms_click().diaoboguanli().diaobodan().create_ziying_diaobodan()
-        odd = self.login.wms_click().diaoboguanli().diaobodan().get_pd_odd()
-        self.login.quit()
-        print(odd)
-        # sleep(5)
+        case_path = r'E:\job\test\ywzt\data_files\wms\diaoboguanli\diaobodan.yaml'
+        data_path = r'E:\job\test\ywzt\data_files\wms\diaoboguanli\diaobodan_data.yaml'
 
+        # 创建调拨单
+        self.login.wms_click().diaoboguanli().diaobodan().create_ziying_diaobodan()
+        # 获取调拨单号及拣货单号
+        odd = self.login.wms_click().diaoboguanli().diaobodan().get_pd_odd()
+        print(odd)
+        # pda拣货及装箱
         PdaFirstPage().diaoboguanli().diaobo_jianhuo(odd)
+        # 调拨单创建订舱
+        self.login.wms_click().diaoboguanli().diaobodan().click_fayun(odd)
+        # 预定仓创建订舱
+        self.login.tms_click().tob_wuliu().dingcangguanli().ziyingsanhuo().yudingcang().create_dingcang(case_path, data_path)
+        # 创建tms与获取TMS单号
+        self.login.tms_click().tob_wuliu().dingcangguanli().ziyingsanhuo().dingcang().dingcang_case(case_path, data_path, odd)
+        odd_1 = self.login.tms_click().tob_wuliu().dingcangguanli().ziyingsanhuo().dingcang().dingcang_get_odd(case_path, data_path)
+        print(odd_1)
+        odd_2 = self.login.wms_click().diaoboguanli().diaobopici().diaobopici_get_odd(case_path, data_path, odd_1)
+        print(odd_2)
+        PdaFirstPage().diaoboguanli().diaobo_pici_fayun(odd_2)
         PdaFirstPage().quit()
+        self.login.quit()
         # assert odd == 'PD2112250007'
         # PdaFirstPage().setup_class()
+
+    # def test_tms_case(self):
